@@ -1,0 +1,9 @@
+<mat-nav-list id="menu">
+  <ng-container *ngFor="let item of menu; let is_last = last">
+    <a mat-list-item [routerLink]="[item.href]">
+      <mat-icon matListItemIcon [fontIcon]="item.icon" />
+      <div>{{item.label}}</div>
+    </a>
+    <mat-divider *ngIf="!is_last"></mat-divider>
+  </ng-container>
+</mat-nav-list>

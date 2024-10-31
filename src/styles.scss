@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --header-height: 4.75rem;
+  --color-text: #222b45;
+  --color-canvas: white;
+  --color-backdrop: #edf1f7;
+  --color-border: #edf1f7;
+  --mat-divider-color: var(--color-border);
+  --shadow: 0 .5rem 1rem #2c33491a;
+  --color-icons: #8f9bb3;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html, body {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif
+}
+
+app-root {
+  display: flex;
+  height: 100%;
+  padding-top: var(--header-height)
+}
+
+/*@media (prefers-color-scheme: dark) {*/
+/*  :root {*/
+/*    !***/
+/*    TODO*/
+/*     *!*/
+/*    --color-text: #222b45;*/
+/*    --color-canvas: white;*/
+/*    --color-backdrop: #edf1f7;*/
+/*  }*/
+/*}*/

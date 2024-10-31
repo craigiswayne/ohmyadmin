@@ -1,0 +1,14 @@
+mat-drawer-container {
+  box-shadow: var(--shadow);
+}
+
+mat-drawer {
+  width: 16rem;
+  background-color: var(--color-canvas);
+}
+
+main {
+  background-color: var(--color-backdrop);
+  flex-grow: 1;
+  padding: 1rem 1rem 0;
+}
