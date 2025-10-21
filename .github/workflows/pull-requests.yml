@@ -18,3 +18,4 @@ jobs:
     with:
       run_lint: false
       run_test: false
+      test_command: 'test:ci'
