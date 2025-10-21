@@ -6,9 +6,6 @@ on:
       - main
     types:
       - opened
-      - edited
-      - enqueued
-      - reopened
       - synchronize
 
 concurrency:
