@@ -18,3 +18,5 @@ jobs:
     with:
       run_lint: false
       test_command: 'test:ci'
+      test_artifact_path: 'coverage/ohmyadmin'
+      test_artifact_name: 'coverage_report'
