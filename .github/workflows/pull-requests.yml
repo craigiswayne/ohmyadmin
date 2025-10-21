@@ -7,6 +7,9 @@ on:
     types:
       - opened
       - edited
+      - enqueued
+      - reopened
+      - synchronize
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
