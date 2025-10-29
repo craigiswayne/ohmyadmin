@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   install_build_lint_test:
-    uses: craigiswayne/ci-cd/.github/workflows/_npm-install-build-lint-test.yml@v0.0.11
+    uses: craigiswayne/ci-cd/.github/workflows/_npm-install-build-lint-test.yml@v0.0.12
     strategy:
       matrix:
         projects: ['ohmyadmin', 'component-library', 'demo']
