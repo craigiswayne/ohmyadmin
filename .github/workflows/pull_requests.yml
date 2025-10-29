@@ -1,0 +1,30 @@
+name: "PR Checks"
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  install_build_lint_test:
+    uses: craigiswayne/ci-cd/.github/workflows/_npm-install-build-lint-test.yml@v0.0.11
+    strategy:
+      matrix:
+        projects: ['ohmyadmin', 'components', 'demo']
+    with:
+      install_command: 'install'
+      build_command: 'build:${{matrix.projects}}'
+      test_command: 'test:ci:${{matrix.projects}}'
+      run_build: true
+      run_test: true
+      run_lint: false

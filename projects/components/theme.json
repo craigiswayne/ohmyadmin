@@ -1,0 +1,19 @@
+{
+  "base": {
+    "colors": {
+      "primary": "",
+      "error": "",
+      "success": "",
+      "warning": "",
+    }
+  },
+  "dark": {
+    // these values will override the base values
+  },
+  "light": {
+    // these values will override the base values
+  },
+  "reduced-motion": {
+    // these values will override the base values
+  }
+}
