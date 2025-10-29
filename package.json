@@ -6,7 +6,7 @@
     "start": "ng serve",
     "start:demo": "ng serve --project demo",
     "build": "ng build --stats-json",
-    "build:ohmyadmin": "npm run build -- component-library && npm run build -- ohmyadmin",
+    "build:ohmyadmin": "npm run build:component-library && npm run build -- ohmyadmin",
     "build:demo": "npm run build -- demo",
     "build:component-library": "ng build component-library",
     "build:component-library:watch": "npm run build:component-library -- --watch",
