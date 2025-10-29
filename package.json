@@ -10,7 +10,9 @@
     "build:components": "ng build components",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:ci": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless"
+    "test:ci:ohmyadmin": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project ohmyadmin",
+    "test:ci:demo": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project demo",
+    "test:ci:components": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project components"
   },
   "prettier": {
     "printWidth": 100,
