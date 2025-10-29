@@ -1,0 +1,32 @@
+name: "PR Checks"
+
+on:
+  pull_request:
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  no_todos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+  npm_actions:
+    uses: craigiswayne/ci-cd/.github/workflows/_npm-install-build-lint-test.yml@v0.0.11
+    strategy:
+      matrix:
+        projects: ['ohmyadmin', 'components', 'demo']
+    with:
+      install_command: 'install'
+      build_command: 'build:${{matrix.projects}}'
+      test_command: 'test:ci:${{matrix.projects}}'
+      run_build: true
+      run_test: false
+      run_lint: false

@@ -4,7 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --stats-json",
+    "build:ohmyadmin": "npm run build -- ohmyadmin",
+    "build:demo": "npm run build -- demo",
+    "build:components": "ng build components",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -43,6 +46,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^20.3.0",
     "typescript": "~5.9.2"
   }
 }
