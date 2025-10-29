@@ -5,9 +5,8 @@
   --button-height: 38px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  width: calc(var(--button-height) + 2px);
-  height: var(--button-height);
-  --v-btn-size: .9375rem;
+  block-size: var(--button-height);
+  inline-size: calc(var(--button-height) + 2px);
 
   position: fixed;
   inset-block-start: 20%;
