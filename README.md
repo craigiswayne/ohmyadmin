@@ -1,4 +1,4 @@
-# Ohmyadmin
+# Oh My Admin [![PR Checks](https://github.com/craigiswayne/ohmyadmin/actions/workflows/pull_requests.yml/badge.svg)](https://github.com/craigiswayne/ohmyadmin/actions/workflows/pull_requests.yml)
 
 ```mermaid
 flowchart TD
