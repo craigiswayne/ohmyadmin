@@ -19,10 +19,12 @@ permissions:
 
 jobs:
   install_build_lint_test:
-    uses: craigiswayne/ci-cd/.github/workflows/_npm-install-build-lint-test.yml@v0.0.11
+    name: "Build & Test"
+    uses: craigiswayne/ci-cd/.github/workflows/_npm-install-build-lint-test.yml@v0.0.12
     strategy:
+      fail-fast: true
       matrix:
-        projects: ['ohmyadmin', 'components', 'demo']
+        projects: ['ohmyadmin', 'component-library', 'demo']
     with:
       install_command: 'install'
       build_command: 'build:${{matrix.projects}}'

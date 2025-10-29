@@ -4,15 +4,17 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:demo": "ng serve --project demo",
     "build": "ng build --stats-json",
-    "build:ohmyadmin": "npm run build -- ohmyadmin",
+    "build:ohmyadmin": "npm run build:component-library && npm run build -- ohmyadmin",
     "build:demo": "npm run build -- demo",
-    "build:components": "ng build components",
+    "build:component-library": "ng build component-library",
+    "build:component-library:watch": "npm run build:component-library -- --watch",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:ci:ohmyadmin": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project ohmyadmin",
     "test:ci:demo": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project demo",
-    "test:ci:components": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project components"
+    "test:ci:component-library": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project component-library"
   },
   "prettier": {
     "printWidth": 100,
