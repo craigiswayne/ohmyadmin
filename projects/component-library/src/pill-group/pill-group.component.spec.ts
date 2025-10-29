@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Components } from './components';
+import { PillGroupComponent } from './pill-group.component';
 
-describe('Components', () => {
-  let component: Components;
-  let fixture: ComponentFixture<Components>;
+describe('PillGroup', () => {
+  let component: PillGroupComponent;
+  let fixture: ComponentFixture<PillGroupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Components]
+      imports: [PillGroupComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Components);
+    fixture = TestBed.createComponent(PillGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

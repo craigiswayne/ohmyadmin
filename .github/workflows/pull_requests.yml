@@ -22,7 +22,7 @@ jobs:
     uses: craigiswayne/ci-cd/.github/workflows/_npm-install-build-lint-test.yml@v0.0.11
     strategy:
       matrix:
-        projects: ['ohmyadmin', 'components', 'demo']
+        projects: ['ohmyadmin', 'component-library', 'demo']
     with:
       install_command: 'install'
       build_command: 'build:${{matrix.projects}}'
