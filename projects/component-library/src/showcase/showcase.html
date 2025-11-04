@@ -8,13 +8,13 @@
     { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
     { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
   ]; track item.title) {
-    <lib-pill title="{{item.title}}" link="{{item.link}}" />
+    <lib-angular-pill title="{{item.title}}" link="{{item.link}}" />
   }
 </legend>
 
 <legend>
   <title>Pill Group</title>
-  <lib-pill-group>
+  <lib-angular-pill-group>
     @for (item of [
       { title: 'Explore the Docs', link: 'https://angular.dev' },
       { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
@@ -23,7 +23,7 @@
       { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
       { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
     ]; track item.title) {
-      <lib-pill title="{{item.title}}" link="{{item.link}}" />
+      <lib-angular-pill title="{{item.title}}" link="{{item.link}}" />
     }
-  </lib-pill-group>
+  </lib-angular-pill-group>
 </legend>

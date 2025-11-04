@@ -1,5 +1,13 @@
 # Oh My Admin [![PR Checks](https://github.com/craigiswayne/ohmyadmin/actions/workflows/pull_requests.yml/badge.svg)](https://github.com/craigiswayne/ohmyadmin/actions/workflows/pull_requests.yml)
 
+## Development
+* Run `build:component-library:watch`
+  * This will monitor changes to the component library and build to the output file which is used in other projects
+* Run `start`
+  * This is the kitchen sink which allows you to preview the components being built
+
+---
+
 ```mermaid
 flowchart TD
 USER -->|navigates to| PAGE --> REQUIRES_AUTH{Requires Log In?} 
