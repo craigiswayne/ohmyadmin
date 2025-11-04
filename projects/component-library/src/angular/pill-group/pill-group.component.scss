@@ -5,21 +5,21 @@
   flex-wrap: wrap;
   gap: 1.25rem;
 
-  ::ng-deep lib-pill:nth-child(6n + 1) {
+  ::ng-deep lib-angular-pill:nth-child(6n + 1) {
     --pill-accent: var(--bright-blue);
   }
 
-  ::ng-deep lib-pill:nth-child(6n + 2) {
+  ::ng-deep lib-angular-pill:nth-child(6n + 2) {
     --pill-accent: var(--electric-violet);
   }
 
-  ::ng-deep lib-pill:nth-child(6n + 3) {
+  ::ng-deep lib-angular-pill:nth-child(6n + 3) {
     --pill-accent: var(--french-violet);
   }
 
-  ::ng-deep lib-pill:nth-child(6n + 4),
-  ::ng-deep lib-pill:nth-child(6n + 5),
-  ::ng-deep lib-pill:nth-child(6n + 6) {
+  ::ng-deep lib-angular-pill:nth-child(6n + 4),
+  ::ng-deep lib-angular-pill:nth-child(6n + 5),
+  ::ng-deep lib-angular-pill:nth-child(6n + 6) {
     --pill-accent: var(--hot-red);
   }
 

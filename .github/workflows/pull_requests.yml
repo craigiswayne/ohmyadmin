@@ -18,17 +18,30 @@ permissions:
   contents: write
 
 jobs:
-  install_build_lint_test:
-    name: "Build & Test"
-    uses: craigiswayne/ci-cd/.github/workflows/_npm-install-build-lint-test.yml@v0.0.12
-    strategy:
-      fail-fast: true
-      matrix:
-        projects: ['ohmyadmin', 'component-library', 'demo']
-    with:
-      install_command: 'install'
-      build_command: 'build:${{matrix.projects}}'
-      test_command: 'test:ci:${{matrix.projects}}'
-      run_build: true
-      run_test: true
-      run_lint: false
+#  install_build_lint_test:
+#    name: "Build & Test"
+#    uses: craigiswayne/ci-cd/.github/workflows/_npm-install-build-lint-test.yml@v0.0.12
+#    strategy:
+#      fail-fast: true
+#      matrix:
+#        projects: ['ohmyadmin', 'component-library', 'demo']
+#    with:
+#      install_command: 'install'
+#      build_command: 'build:${{matrix.projects}}'
+#      test_command: 'test:ci:${{matrix.projects}}'
+#      run_build: true
+#      run_test: true
+#      run_lint: false
+
+  install-build-test:
+    name: Install, Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: npm ci
+      - run: npm run build:component-library
+      - run: npm run build:demo
+      - run: npm run build:ohmyadmin
+      - run: npm run test:ci:component-library
+      - run: npm run test:ci:demo
+      - run: npm run test:ci:ohmyadmin

@@ -1,10 +1,10 @@
 import {Component, signal} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {PillComponent, PillGroupComponent, ThemeCustomizerComponent} from 'component-library';
+import {PillComponent, PillGroupComponent, SeparatorComponent, ThemeCustomizerComponent} from 'component-library';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, PillComponent, PillGroupComponent, ThemeCustomizerComponent],
+  imports: [RouterOutlet, PillComponent, PillGroupComponent, ThemeCustomizerComponent, SeparatorComponent],
   templateUrl: './app.html',
 })
 export class App {

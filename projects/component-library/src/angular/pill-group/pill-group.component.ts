@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
-  selector: 'lib-pill-group',
+  selector: 'lib-angular-pill-group',
   imports: [],
   templateUrl: './pill-group.component.html',
   styleUrl: './pill-group.component.scss',

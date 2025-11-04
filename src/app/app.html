@@ -92,12 +92,6 @@
     margin-top: 1.5rem;
   }
 
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
   .pill-group {
     display: flex;
     flex-direction: column;
@@ -172,13 +166,6 @@
       flex-direction: column;
       width: max-content;
     }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
   }
 </style>
 
@@ -233,9 +220,9 @@
       <h1>Hello, {{ title() }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
     </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
+    <lib-angular-separator />
     <div class="right-side">
-        <lib-pill-group>
+        <lib-angular-pill-group>
           @for (item of [
             { title: 'Explore the Docs', link: 'https://angular.dev' },
             { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
@@ -244,9 +231,9 @@
             { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
             { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
           ]; track item.title) {
-            <lib-pill title="{{item.title}}" link="{{item.link}}" />
+            <lib-angular-pill title="{{item.title}}" link="{{item.link}}" />
           }
-        </lib-pill-group>
+        </lib-angular-pill-group>
       <div class="social-links">
         <a
           href="https://github.com/angular/angular"

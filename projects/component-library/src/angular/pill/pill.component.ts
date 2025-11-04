@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 
 @Component({
-  selector: 'lib-pill',
+  selector: 'lib-angular-pill',
   templateUrl: './pill.component.html',
   styleUrl: './pill.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
