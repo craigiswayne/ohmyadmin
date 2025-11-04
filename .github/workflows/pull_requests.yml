@@ -42,6 +42,6 @@ jobs:
       - run: npm run build:component-library
       - run: npm run build:demo
       - run: npm run build:ohmyadmin
-      - run: npm run test:component-library
-      - run: npm run test:demo
-      - run: npm run test:ohmyadmin
+      - run: npm run test:ci:component-library
+      - run: npm run test:ci:demo
+      - run: npm run test:ci:ohmyadmin
