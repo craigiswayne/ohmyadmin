@@ -1,0 +1,19 @@
+//:host {
+//  display: flex;
+//  flex-direction: row;
+//  flex-wrap: wrap;
+//  flex: 1 1 auto;
+//  width: 100%;
+//}
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  // This mimics the 'gap' behavior by applying
+  // margin to the items. We use a negative margin
+  // on the host to offset the extra padding on items
+  // at the edges of the container.
+  margin: -8px; // This should be (gutter / 2) * -1
+}
