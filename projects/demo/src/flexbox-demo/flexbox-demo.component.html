@@ -1,0 +1,84 @@
+<h1>CSS Flexbox</h1>
+
+<section>
+  <h2 class="title">flex-direction</h2>
+  <div class="example">
+    <row [gap]="10" id="example-direction-row">
+      <column/>
+      <column style="width: var(--block-size-large)"/>
+      <column style="width: var(--block-size-large)"/>
+      <column/>
+      <column style="width: var(--block-size-large)"/>
+      <column style="width: var(--block-size-large)"/>
+      <column/>
+      <column style="width: var(--block-size-large)"/>
+      <column style="width: var(--block-size-large)"/>
+    </row>
+    <h3 class="label">row</h3>
+  </div>
+
+  <div class="example">
+    <row
+      id="example-direction-row-reverse"
+      [gap]="10"
+      direction="row-reverse"
+    >
+      <column/>
+      <column style="width: var(--block-size-large)"/>
+      <column style="width: var(--block-size-large)"/>
+      <column/>
+      <column style="width: var(--block-size-large)"/>
+      <column style="width: var(--block-size-large)"/>
+      <column/>
+      <column style="width: var(--block-size-large)"/>
+      <column style="width: var(--block-size-large)"/>
+    </row>
+    <h3 class="label">row-reverse</h3>
+  </div>
+
+  <column basis="100%" style="height:0"></column>
+
+  <div class="example">
+    <row
+      id="example-direction-column"
+      [gap]="10"
+      direction="column"
+      [inline]="true"
+    >
+      <column></column>
+      <column style="height: var(--block-size-large)"></column>
+      <column style="height: var(--block-size-large)"></column>
+      <column></column>
+      <column style="height: var(--block-size-large)"></column>
+      <column style="height: var(--block-size-large)"></column>
+      <column></column>
+      <column style="height: var(--block-size-large)"></column>
+      <column style="height: var(--block-size-large)"></column>
+    </row>
+
+    <h3 class="label">column</h3>
+  </div>
+
+  <div class="example">
+    <row
+      id="example-direction-column-reverse"
+      [gap]="10"
+      direction="column-reverse"
+      [inline]="true"
+    >
+      <column></column>
+      <column style="height: var(--block-size-large);"></column>
+      <column style="height: var(--block-size-large);"></column>
+      <column></column>
+      <column style="height: var(--block-size-large);"></column>
+      <column style="height: var(--block-size-large);"></column>
+      <column></column>
+      <column style="height: var(--block-size-large);"></column>
+      <column style="height: var(--block-size-large);"></column>
+    </row>
+    <h3 class="label">column-reverse</h3>
+  </div>
+</section>
+
+
+

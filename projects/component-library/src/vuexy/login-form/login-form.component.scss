@@ -1,0 +1,128 @@
+:host, *  {
+  box-sizing: border-box;
+  background: rgb(47, 51, 73);
+}
+
+:host {
+  --v-theme-surface: 47, 51, 73;
+  --v-theme-primary-overlay-multiplier: 2;
+  --v-theme-primary: 115, 103, 240;
+  --v-btn-height: 38px;
+  --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+  --v-btn-size: .9375rem;
+}
+
+input[type=email],input[type=password], {
+  background-color: transparent;
+  border-style: none;
+  align-items: center;
+  column-gap: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  letter-spacing: .009375em;
+  opacity: var(--v-high-emphasis-opacity);
+  min-height: max(var(--v-input-control-height, 56px), 1.40625rem + var(--v-field-input-padding-top) + var(--v-field-input-padding-bottom));
+  min-width: 0;
+  padding-inline: var(--v-field-padding-start) var(--v-field-padding-end);
+  padding-top: var(--v-field-input-padding-top);
+  padding-bottom: var(--v-field-input-padding-bottom);
+  position: relative;
+  width: 100%;
+
+  background: none;
+  color: rgba(225, 222, 245, 0.9);
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  row-gap: 3.5px;
+  flex: 1;
+}
+
+
+form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+}
+
+.col {
+  flex: 0 0 100%;
+  flex-direction: column;
+}
+
+
+
+label {
+  color: rgba(225,222,245,0.9)
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+svg {
+  height: 20px;
+  width: auto;
+}
+
+button[type="submit"] {
+  align-items: center;
+  border-radius: 6px;
+  display: inline-grid;
+  grid-template-areas: "prepend content append";
+  grid-template-columns: max-content auto max-content;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0.0269rem;
+  line-height: 1.375rem;
+  max-width: 100%;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  text-indent: 0.0269rem;
+  text-transform: capitalize;
+  transition-property: box-shadow, transform, opacity, background;
+  transition-duration: 0.28s;
+  transition-timing-function:
+    cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  vertical-align: middle;
+  flex-shrink: 0;
+
+
+  font-size: var(--v-btn-size);
+  min-width: 68px;
+  padding: 0px 20px;
+
+  border-color: rgba(var(--v-border-color), var(--v-border-opacity));
+  border-style: solid;
+  border-width: 0px;
+
+  background: rgb(var(--v-theme-surface));
+  cursor: pointer;
+  appearance: button;
+  background-color: rgb(var(--v-theme-primary)) !important;
+  color: rgb(var(--v-theme-on-primary)) !important;
+  height: calc(var(--v-btn-height) + 0px);
+  box-shadow: 0 2px 6px rgba(var(--v-theme-primary), .3);
+}
+
+.text-primary {
+  color: rgb(var(--v-theme-primary)) !important;
+}

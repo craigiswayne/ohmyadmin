@@ -1,0 +1,75 @@
+:host {
+  background: #fdeeee;
+  color: #c12120;
+  display: block;
+  padding: 1rem;
+  min-height: 100vh;
+
+  --block-size-small: 50px;
+  --block-size-large: calc(var(--block-size-small) * 2);
+  --gap: 10px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size:4rem;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+
+  .title {
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+section .title,
+section .example .label{
+  color: #000200;
+}
+
+section .example {
+  position: relative;
+  margin-bottom: 3em;
+}
+
+section .example .label {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+column {
+  background: #e01c49;
+  border-radius: 16px;
+}
+
+.example {
+  border-radius: 16px;
+  padding: var(--gap);
+  border: 6px solid #010100;
+  display: inline-flex;
+}
+
+#example-direction-row,
+#example-direction-row-reverse {
+  width: calc(var(--block-size-small) + var(--block-size-large) + var(--block-size-large) + var(--gap) + var(--gap));
+  column {
+    width: var(--block-size-small);
+    height: var(--block-size-small);
+  }
+}
+
+#example-direction-column,
+#example-direction-column-reverse{
+  height: calc(var(--block-size-small) + var(--block-size-large) + var(--block-size-large) + var(--gap) + var(--gap));
+  column {
+    height: var(--block-size-small);
+    width: var(--block-size-small);
+  }
+}
