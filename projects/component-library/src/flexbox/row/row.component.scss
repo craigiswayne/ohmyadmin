@@ -1,7 +1,8 @@
 :host {
   display: var(--flex-style, flex);
-  flex-direction: var(--direction, 'row');
-  flex-wrap: wrap;
+  flex-direction: var(--direction, row);
   gap: var(--gap, 0);
-  align-items: var(--align-items, 'stretch');
+  align-items: var(--align-items, stretch);
+  justify-content: var(--justify-content, flex-start);
+  flex-wrap: wrap;
 }
