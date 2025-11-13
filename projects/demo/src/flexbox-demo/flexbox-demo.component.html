@@ -1,4 +1,9 @@
 <h1>CSS Flexbox</h1>
+<h2>
+  <i>
+    based on <a target="_blank" href="https://www.reddit.com/r/webdev/comments/usln38/a_visual_reference_of_css_flexbox/">this image by &commat;eludadev</a>
+  </i>
+</h2>
 
 <section>
   <h2 class="title">flex-direction</h2>
@@ -147,7 +152,6 @@
     <row
       gap="10"
       justify-content="center"
-      style="width: 100%"
     >
       <column>1</column>
       <column style="width: var(--block-size-medium)">2</column>
@@ -159,7 +163,6 @@
     <row
       gap="10"
       justify-content="flex-end"
-      style="width: 100%"
     >
       <column>1</column>
       <column style="width: var(--block-size-medium)">2</column>
@@ -171,7 +174,6 @@
     <row
       gap="10"
       justify-content="space-between"
-      style="width: 100%"
     >
       <column>1</column>
       <column style="width: var(--block-size-medium)">2</column>
@@ -183,7 +185,6 @@
     <row
       gap="10"
       justify-content="space-around"
-      style="width: 100%"
     >
       <column>1</column>
       <column style="width: var(--block-size-medium)">2</column>
@@ -195,12 +196,98 @@
     <row
       gap="10"
       justify-content="space-evenly"
-      style="width: 100%"
     >
       <column>1</column>
       <column style="width: var(--block-size-medium)">2</column>
       <column>3</column>
     </row>
     <h3 class="label">space-evenly</h3>
+  </div>
+</section>
+
+<hr />
+
+<section>
+  <h2 class="title">align-content</h2>
+  <div class="example" style="max-width: 250px;">
+    <row gap="10">
+      <column style="height: var(--block-size-small);">1</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">2</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">3</column>
+      <column style="height: var(--block-size-small);">4</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">5</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">6</column>
+    </row>
+    <h3 class="label">flex-start</h3>
+  </div>
+  <div class="example" style="max-width: 250px;">
+    <row
+      gap="10"
+      align-content="center"
+    >
+      <column style="height: var(--block-size-small);">1</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">2</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">3</column>
+      <column style="height: var(--block-size-small);">4</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">5</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">6</column>
+    </row>
+    <h3 class="label">center</h3>
+  </div>
+  <div class="example" style="max-width: 250px;">
+    <row
+      gap="10"
+      align-content="flex-end"
+    >
+      <column style="height: var(--block-size-small);">1</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">2</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">3</column>
+      <column style="height: var(--block-size-small);">4</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">5</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">6</column>
+    </row>
+    <h3 class="label">flex-end</h3>
+  </div>
+  <div class="example" style="max-width: 250px;">
+    <row
+      gap="10"
+      align-content="stretch"
+    >
+      <column>1</column>
+      <column style="width: var(--block-size-medium)">2</column>
+      <column style="width: var(--block-size-medium)">3</column>
+      <column>4</column>
+      <column style="width: var(--block-size-medium)">5</column>
+      <column style="width: var(--block-size-medium)">6</column>
+    </row>
+    <h3 class="label">stretch</h3>
+  </div>
+  <div class="example" style="max-width: 250px;">
+    <row
+      gap="10"
+      align-content="space-between"
+    >
+      <column style="height: var(--block-size-small);">1</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">2</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">3</column>
+      <column style="height: var(--block-size-small);">4</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">5</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">6</column>
+    </row>
+    <h3 class="label">space-between</h3>
+  </div>
+  <div class="example" style="max-width: 250px;">
+    <row
+      gap="10"
+      align-content="space-around"
+    >
+      <column style="height: var(--block-size-small);">1</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">2</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">3</column>
+      <column style="height: var(--block-size-small);">4</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">5</column>
+      <column style="width: var(--block-size-medium); height: var(--block-size-small);">6</column>
+    </row>
+    <h3 class="label">space-around</h3>
   </div>
 </section>
