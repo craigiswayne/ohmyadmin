@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+
 :host {
   background: #fdeeee;
   color: #c12120;
@@ -6,13 +8,19 @@
   min-height: 100vh;
 
   --block-size-small: 50px;
+  --block-size-medium: calc(var(--block-size-small) * 1.5);
   --block-size-large: calc(var(--block-size-small) * 2);
   --gap: 10px;
+  font-family: 'Stack Sans Headline', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 h1 {
   margin-top: 0;
-  font-size:4rem;
+  font-size: 4rem;
+  font-weight: 700
 }
 
 section {
@@ -21,6 +29,12 @@ section {
   gap: 20px;
   align-items: flex-end;
 
+
+  .title,
+  .example .label {
+    color: #000200;
+  }
+
   .title {
     width: 100%;
     font-size: 2rem;
@@ -28,37 +42,36 @@ section {
   }
 }
 
-section .title,
-section .example .label{
-  color: #000200;
-}
-
-section .example {
-  position: relative;
-  margin-bottom: 3em;
-}
-
-section .example .label {
-  position: absolute;
-  top: 100%;
-  left: 0;
-}
-
-column {
-  background: #e01c49;
-  border-radius: 16px;
-}
 
 .example {
+  position: relative;
+  margin-bottom: 3em;
   border-radius: 16px;
   padding: var(--gap);
   border: 6px solid #010100;
   display: inline-flex;
+  min-height: 200px;
+
+  column {
+    background: #e01c49;
+    border-radius: 16px;
+    color: white;
+    align-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .label {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 }
 
 #example-direction-row,
 #example-direction-row-reverse {
   width: calc(var(--block-size-small) + var(--block-size-large) + var(--block-size-large) + var(--gap) + var(--gap));
+
   column {
     width: var(--block-size-small);
     height: var(--block-size-small);
@@ -66,8 +79,9 @@ column {
 }
 
 #example-direction-column,
-#example-direction-column-reverse{
+#example-direction-column-reverse {
   height: calc(var(--block-size-small) + var(--block-size-large) + var(--block-size-large) + var(--gap) + var(--gap));
+
   column {
     height: var(--block-size-small);
     width: var(--block-size-small);
