@@ -1,5 +1,5 @@
 import {Component, ComponentRef, effect, viewChild, ViewContainerRef} from '@angular/core';
-import {AvatarComponent} from 'component-library';
+import {AvatarComponent, random_number_between} from 'component-library';
 import {ExtractSignalInputs} from '../types/extract-signal-inputs.type';
 
 @Component({
@@ -23,7 +23,7 @@ export class AvatarDemoComponent {
       const test_cases: AvatarInputs[] = [
         {
           name: 'Craig Wayne Govender',
-          image_url: 'https://mockmind-api.uifaces.co/content/human/1.jpg',
+          image_url: `/mock/avatar/${random_number_between(1, 100)}.jpg`,
           description: 'full name + image'
         },
         {
@@ -45,7 +45,7 @@ export class AvatarDemoComponent {
         },
         {
           name: '  Craig   Wayne   Govender',
-          image_url: 'https://mockmind-api.uifaces.co/content/human/2.jpg',
+          image_url: `/mock/avatar/${random_number_between(1, 100)}.jpg`,
           description: 'leading spaces in full name + image'
         },
         {
