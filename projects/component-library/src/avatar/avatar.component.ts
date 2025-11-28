@@ -11,7 +11,11 @@ export class AvatarComponent {
   name = input<string>();
 
   protected initials = computed<string>(() => {
-    return (this.name() ?? 'Unknown User').split(' ').map((part: string) => part[0].toUpperCase()).slice(0, 2).join('');
+      return (this.name() ?? 'Unknown User')
+        .split(/\s/)
+        .filter(i => i)
+        .map((part: string) => part[0].toUpperCase())
+        .slice(0, 2).join('');
   })
 
   protected image_load_error = signal<boolean>(false);

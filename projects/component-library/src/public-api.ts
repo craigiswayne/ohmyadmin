@@ -6,3 +6,4 @@ export * from './theme-customizer/theme-customizer.component';
 export * from './avatar/avatar.component'
 export * from './flexbox/row/row.component'
 export * from './flexbox/column/column.component'
+export * from './helpers/random_number_between'
