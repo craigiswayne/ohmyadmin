@@ -11,7 +11,6 @@ import {filter, map, startWith} from 'rxjs';
     AsyncPipe
   ],
   styleUrl: 'demo-layout.component.scss',
-  encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DemoLayoutComponent {
