@@ -1,19 +1,19 @@
-import {ChangeDetectionStrategy, Component, inject, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {AsyncPipe} from '@angular/common';
 import {filter, map, startWith} from 'rxjs';
 
 @Component({
   selector: 'demo-layout',
-  templateUrl: './demo-layout.component.html',
+  templateUrl: './component-demo-layout.component.html',
   imports: [
     RouterOutlet,
     AsyncPipe
   ],
-  styleUrl: 'demo-layout.component.scss',
+  styleUrl: 'component-demo-layout.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DemoLayoutComponent {
+export class ComponentDemoLayoutComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
 

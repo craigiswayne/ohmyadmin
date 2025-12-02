@@ -44,7 +44,6 @@ app.get('/mock/avatar/:id.jpg', (req, res) => {
   }
 
   const target_url = `https://mockmind-api.uifaces.co/content/human/${id}.jpg`;
-  console.log(`Serving Specific Avatar [${id}]:`, target_url);
   res.redirect(target_url);
 });
 
