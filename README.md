@@ -1,5 +1,20 @@
 # Oh My Admin [![PR Checks](https://github.com/craigiswayne/ohmyadmin/actions/workflows/pull_requests.yml/badge.svg)](https://github.com/craigiswayne/ohmyadmin/actions/workflows/pull_requests.yml)
 
+### tsconfig.json component library path comparison
+
+| root tsconfig.json uses dist path                                    | root tsconfig.json uses project path                                      |
+|----------------------------------------------------------------------|---------------------------------------------------------------------------|
+| requires component-library to be built first before serving the demo | DOES NOT requires component-library to be built first before serving demo |
+| component definitions are the compiled versions                      | component definitions go to the uncompiled version                        |
+| not a great development experience                                   | great for local development                                               |
+| mimics production setup                                              | does not mimic production                                                 |
+| will show production related packaging errors                        | can hide errors relating to packaging                                     |
+| faster builds                                                        | slower builds                                                             |
+| stronger decoupling                                                  |                                                                           |
+| no live reloading                                                    | live reloading when changes are made in the component-library             |
+
+---
+
 ## Development
 * Run `build:component-library:watch`
   * This will monitor changes to the component library and build to the output file which is used in other projects

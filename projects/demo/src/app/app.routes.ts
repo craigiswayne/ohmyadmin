@@ -1,14 +1,14 @@
 import {Routes} from '@angular/router';
-import {DemoLayoutComponent} from '../demo-layout/demo-layout.component';
+import {ComponentDemoLayoutComponent} from '../component-demo-layout/component-demo-layout.component';
 import {FlexboxDemoComponent} from '../flexbox-demo/flexbox-demo.component';
 import {TypographyDemoComponent} from '../typography-demo/typography-demo.component';
 import {AvatarDemoComponent} from '../avatar-demo/avatar-demo.component';
+import {GoogleTicketDemoComponent} from '../google-ticket-demo/google-ticket-demo.component';
 
 export const routes: Routes = [
   {
-    path: 'demo',
-    component: DemoLayoutComponent,
-    title: 'Demo Layout',
+    path: 'components',
+    component: ComponentDemoLayoutComponent,
     children: [
       {
         path: 'avatar',
@@ -24,6 +24,16 @@ export const routes: Routes = [
         path: 'typography',
         title: 'Typography',
         component: TypographyDemoComponent
+      },
+      {
+        path: 'google',
+        title: 'Google',
+        children: [
+          {
+            path: 'ticket',
+            component: GoogleTicketDemoComponent
+          }
+        ]
       }
     ]
   }

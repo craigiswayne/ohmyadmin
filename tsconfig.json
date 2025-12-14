@@ -5,10 +5,10 @@
   "compilerOptions": {
     "paths": {
       "component-library": [
-        "./dist/component-library"
+        "./projects/component-library/src/public-api"
       ],
       "component-library/*": [
-        "./dist/component-library/*"
+        "./projects/component-library/src/*"
       ]
     },
     "strict": true,
