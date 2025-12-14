@@ -5,11 +5,13 @@
     "ng": "ng",
     "start": "ng serve",
     "start:demo": "ng serve --project demo",
+    "start:storybook": "ng run component-library:storybook",
     "build": "ng build --stats-json",
     "build:ohmyadmin": "npm run build:component-library && npm run build -- ohmyadmin",
     "build:demo": "npm run build -- demo",
     "build:component-library": "ng build component-library",
     "build:component-library:watch": "npm run build:component-library -- --watch",
+    "build:storybook": "ng run component-library:build-storybook",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:ci:ohmyadmin": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project ohmyadmin",
@@ -61,6 +63,16 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^21.0.0",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "storybook": "^10.1.8",
+    "@storybook/angular": "^10.1.8",
+    "@storybook/addon-a11y": "^10.1.8",
+    "@storybook/addon-docs": "^10.1.8",
+    "@storybook/addon-onboarding": "^10.1.8",
+    "@angular-devkit/build-angular": "^21.0.1",
+    "@angular-devkit/architect": "^0.2100.1",
+    "@angular-devkit/core": "^21.0.1",
+    "@angular/platform-browser-dynamic": "^21.0.1",
+    "@compodoc/compodoc": "^1.1.32"
   }
 }

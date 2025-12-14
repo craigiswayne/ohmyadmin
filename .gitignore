@@ -41,3 +41,8 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Storybook - https://storybook.js.org/docs/angular/sharing/publish-storybook#versioning-storybook
+/storybook-static
+*.storybook.log
+/projects/component-library/documentation.json
