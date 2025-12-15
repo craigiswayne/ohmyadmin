@@ -6,4 +6,4 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
   styleUrl: 'google-ticket.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GoogleTicket {}
+export class GoogleTicketComponent {}

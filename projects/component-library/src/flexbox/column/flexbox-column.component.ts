@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, computed, HostBinding, input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
 
 type ColumnValues = 'auto' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | undefined;
 type SupportedFlexGrowValues = number | 'inherit' | 'initial' | 'unset' | 'revert';
@@ -6,7 +6,7 @@ type SupportedFlexGrowValues = number | 'inherit' | 'initial' | 'unset' | 'rever
 @Component({
   selector: 'column',
   template: '<ng-content></ng-content>',
-  styleUrl: './column.component.scss',
+  styleUrl: './flexbox-column.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'column',
@@ -14,7 +14,7 @@ type SupportedFlexGrowValues = number | 'inherit' | 'initial' | 'unset' | 'rever
     '[style.--basis]': 'basis()'
   }
 })
-export class ColumnComponent {
+export class FlexboxColumnComponent {
   grow = input<SupportedFlexGrowValues>(0);
   basis = input<string>('auto');
 
