@@ -14,7 +14,6 @@
     "test": "ng test",
     "test:ci:component-library": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project component-library",
     "test:ci:mock-server": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project mock-server",
-    "test:ci:ohmyadmin": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project ohmyadmin",
     "watch": "ng build --watch --configuration development"
   },
   "engines": {

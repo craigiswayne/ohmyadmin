@@ -42,7 +42,5 @@ jobs:
       - run: npm run build:component-library
       - run: npm run build:storybook
       - run: npm run build:mock-server
-      - run: npm run build:ohmyadmin
       - run: npm run test:ci:component-library
       - run: npm run test:ci:mock-server
-      - run: npm run test:ci:ohmyadmin
