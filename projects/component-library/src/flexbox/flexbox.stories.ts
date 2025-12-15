@@ -1,11 +1,11 @@
 import type {Meta, StoryObj} from '@storybook/angular';
-import {
-  FlexboxRowComponent,
+import {FlexboxRowComponent } from 'component-library';
+import type {
   SupportedAlignContent,
   SupportedAlignItems,
-  SupportedJustifyContent
-} from 'component-library';
-import type {SupportedDirections} from 'component-library';
+  SupportedJustifyContent,
+  SupportedDirections
+} from './flexbox.types'
 
 const meta: Meta<FlexboxRowComponent> = {
   component: FlexboxRowComponent,
@@ -33,10 +33,11 @@ const meta: Meta<FlexboxRowComponent> = {
       options: ['row', 'column', 'row-reverse', 'column-reverse'],
       control: 'select'
     }
-  },
+  }
 }
 
 export default meta;
+
 type Story = StoryObj<FlexboxRowComponent>;
 
 const host_flexbox_styles = `:host {

@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-
 import {AvatarComponent, random_number_between} from 'component-library';
 
 const meta: Meta<AvatarComponent> = {
   component: AvatarComponent,
-  tags: ['autodocs'],
-} satisfies Meta<typeof AvatarComponent>;
+  tags: ['autodocs']
+}
 
 export default meta;
+
 type Story = StoryObj<AvatarComponent>;
 
 export const WithNameAndImage: Story = {
