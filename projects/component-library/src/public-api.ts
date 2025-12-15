@@ -5,6 +5,7 @@ export * from './google/ticket/google-ticket.component';
 export * from './vuexy/login-form/login-form.component';
 export * from './theme-customizer/theme-customizer.component';
 export * from './avatar/avatar.component'
-export * from './flexbox/row/row.component'
-export * from './flexbox/column/column.component'
+export * from './flexbox/flexbox.types'
+export * from './flexbox/row/flexbox-row.component'
+export * from './flexbox/column/flexbox-column.component'
 export * from './helpers/random_number_between'

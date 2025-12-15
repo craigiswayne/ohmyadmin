@@ -4,6 +4,7 @@ import { GoogleTicketComponent } from 'component-library';
 
 const meta = {
   component: GoogleTicketComponent,
+  tags: ['autodocs']
 } satisfies Meta<typeof GoogleTicketComponent>;
 
 export default meta;

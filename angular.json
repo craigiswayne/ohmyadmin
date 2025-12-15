@@ -142,7 +142,10 @@
               "-d",
               "projects/component-library"
             ],
-            "port": 6006
+            "port": 6006,
+            "styles": [
+              "projects/component-library/.storybook/preview.css"
+            ]
           }
         },
         "build-storybook": {

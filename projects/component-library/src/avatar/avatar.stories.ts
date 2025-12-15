@@ -13,20 +13,20 @@ type Story = StoryObj<AvatarComponent>;
 export const WithNameAndImage: Story = {
   args: {
     name: 'Jane Doe',
-    image_url: 'https://mockmind-api.uifaces.co/content/human/1.jpg'
+    image_url: `https://mockmind-api.uifaces.co/content/human/${random_number_between(1,100)}.jpg`
   }
 }
 
 export const OnlyImage: Story = {
   args: {
-    image_url: 'https://mockmind-api.uifaces.co/content/human/1.jpg'
+    image_url: `https://mockmind-api.uifaces.co/content/human/${random_number_between(1,100)}.jpg`
   }
 }
 
 export const MiddleNameAndImage: Story = {
   args: {
     name: 'Craig Wayne Govender',
-    image_url: `https://mockmind-api.uifaces.co/content/human/1.jpg`
+    image_url: `https://mockmind-api.uifaces.co/content/human/${random_number_between(1,100)}.jpg`
   }
 }
 

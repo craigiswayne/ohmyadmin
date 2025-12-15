@@ -6,7 +6,7 @@ type SupportedFlexGrowValues = number | 'inherit' | 'initial' | 'unset' | 'rever
 @Component({
   selector: 'column',
   template: '<ng-content></ng-content>',
-  styleUrl: './column.component.scss',
+  styleUrl: './flexbox-column.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'column',
@@ -14,7 +14,7 @@ type SupportedFlexGrowValues = number | 'inherit' | 'initial' | 'unset' | 'rever
     '[style.--basis]': 'basis()'
   }
 })
-export class ColumnComponent {
+export class FlexboxColumnComponent {
   grow = input<SupportedFlexGrowValues>(0);
   basis = input<string>('auto');
 

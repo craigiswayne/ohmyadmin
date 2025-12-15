@@ -46,3 +46,5 @@ Thumbs.db
 /storybook-static
 *.storybook.log
 /projects/component-library/documentation.json
+## example storybook stories
+/projects/component-library/src/stories/

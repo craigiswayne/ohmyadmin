@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RowComponent } from './row.component';
+import { FlexboxColumnComponent } from './flexbox-column.component';
 
 describe('RowComponent', () => {
-  let component: RowComponent;
-  let fixture: ComponentFixture<RowComponent>;
+  let component: FlexboxColumnComponent;
+  let fixture: ComponentFixture<FlexboxColumnComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RowComponent]
+      imports: [FlexboxColumnComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RowComponent);
+    fixture = TestBed.createComponent(FlexboxColumnComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
