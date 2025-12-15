@@ -2,22 +2,19 @@
   "name": "ohmyadmin",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "start:demo": "ng serve --project demo",
-    "start:storybook": "ng run component-library:storybook",
     "build": "ng build --stats-json",
-    "build:ohmyadmin": "npm run build:component-library && npm run build -- ohmyadmin",
-    "build:demo": "npm run build -- demo",
     "build:component-library": "ng build component-library",
-    "build:component-library:watch": "npm run build:component-library -- --watch",
+    "build:mock-server": "npm run build -- mock-server",
     "build:storybook": "ng run component-library:build-storybook",
-    "watch": "ng build --watch --configuration development",
+    "ng": "ng",
+    "serve:ssr:mock-server": "node dist/mock-server/server/server.mjs",
+    "start": "ng serve",
+    "start:mock-server": "ng serve --project mock-server",
+    "start:storybook": "ng run component-library:storybook",
     "test": "ng test",
-    "test:ci:ohmyadmin": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project ohmyadmin",
-    "test:ci:demo": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project demo",
     "test:ci:component-library": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project component-library",
-    "serve:ssr:demo": "node dist/demo/server/server.mjs"
+    "test:ci:mock-server": "ng test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless --project mock-server",
+    "watch": "ng build --watch --configuration development"
   },
   "engines": {
     "node": ">=24.12.0 <25.0.0"

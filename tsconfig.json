@@ -45,10 +45,10 @@
       "path": "./projects/component-library/tsconfig.spec.json"
     },
     {
-      "path": "./projects/demo/tsconfig.app.json"
+      "path": "./projects/mock-server/tsconfig.app.json"
     },
     {
-      "path": "./projects/demo/tsconfig.spec.json"
+      "path": "./projects/mock-server/tsconfig.spec.json"
     }
   ]
 }
