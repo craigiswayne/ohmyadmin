@@ -165,39 +165,39 @@
         }
       }
     },
-    "demo": {
+    "mock-server": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/demo",
-      "sourceRoot": "projects/demo/src",
+      "root": "projects/mock-server",
+      "sourceRoot": "projects/mock-server/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "projects/demo/src/main.ts",
+            "browser": "projects/mock-server/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/demo/tsconfig.app.json",
+            "tsConfig": "projects/mock-server/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/demo/public"
+                "input": "projects/mock-server/public"
               }
             ],
             "styles": [
-              "projects/demo/src/styles.scss"
+              "projects/mock-server/src/styles.scss"
             ],
-            "server": "projects/demo/src/main.server.ts",
+            "server": "projects/mock-server/src/main.server.ts",
             "outputMode": "server",
             "ssr": {
-              "entry": "projects/demo/src/server.ts"
+              "entry": "projects/mock-server/src/server.ts"
             }
           },
           "configurations": {
@@ -228,10 +228,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "demo:build:production"
+              "buildTarget": "mock-server:build:production"
             },
             "development": {
-              "buildTarget": "demo:build:development"
+              "buildTarget": "mock-server:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -246,16 +246,16 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/demo/tsconfig.spec.json",
+            "tsConfig": "projects/mock-server/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/demo/public"
+                "input": "projects/mock-server/public"
               }
             ],
             "styles": [
-              "projects/demo/src/styles.scss"
+              "projects/mock-server/src/styles.scss"
             ]
           }
         }
