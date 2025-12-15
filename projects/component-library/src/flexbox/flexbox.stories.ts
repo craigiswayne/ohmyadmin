@@ -68,7 +68,7 @@ const column_styles = `column {
 
 export const Playground: Story = {
   render: (args) => {
-    const direction: SupportedDirections = args.direction
+    const direction: SupportedDirections | undefined = args.direction
     const inline: boolean | undefined = args.inline
     const align_items: SupportedAlignItems | null = args.align_items
     const justify_content: SupportedJustifyContent | null = args.justify_content

@@ -23,7 +23,7 @@ import type {
   }
 })
 export class FlexboxRowComponent {
-  direction = input<SupportedDirections>('row')
+  direction = input<SupportedDirections>()
   inline = input<boolean>()
 
   gap = input<string | number>(0)
