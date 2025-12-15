@@ -4,7 +4,7 @@ import type {
   SupportedAlignItems,
   SupportedDirections,
   SupportedJustifyContent
-} from 'component-library';
+} from '../flexbox.types';
 
 @Component({
   selector: 'row',
