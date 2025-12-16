@@ -1,0 +1,29 @@
+:host {
+  display: inline-flex;
+  flex-wrap: wrap;
+  vertical-align: middle;
+
+  ::ng-deep avatar {
+    margin-left: var(--overlap, -12px);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.collapsed {
+      display: none;
+    }
+
+    .inner {
+      position: relative;
+      top: 0;
+      transition: top 0.1s ease;
+      will-change: top;
+    }
+
+    &:hover .inner {
+      top: -5px;
+      z-index: calc(var(--item-count) + 1);
+    }
+  }
+}

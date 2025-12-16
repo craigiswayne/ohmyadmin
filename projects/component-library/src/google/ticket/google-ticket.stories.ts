@@ -10,4 +10,4 @@ export default meta;
 
 type Story = StoryObj<GoogleTicketComponent>;
 
-export const standard: Story = {};
+export const Sample: Story = {};

@@ -1,5 +1,7 @@
-@if(!image_url() || image_load_error()){
-  {{initials()}}
-} @else {
- <img [src]="image_url()" alt="User Avatar" loading="lazy" (error)="on_image_error()"/>
-}
+<div class="inner">
+  @if (!image_url() || image_load_error()) {
+    {{ initials() }}
+  } @else {
+    <img [src]="image_url()" alt="User Avatar" loading="lazy" (error)="on_image_error()"/>
+  }
+</div>
