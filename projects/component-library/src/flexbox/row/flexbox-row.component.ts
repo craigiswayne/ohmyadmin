@@ -5,6 +5,7 @@ import type {
   SupportedDirections,
   SupportedJustifyContent
 } from '../flexbox.types';
+import {input_to_px} from '../../helpers/input_to_px';
 
 @Component({
   selector: 'row',
@@ -15,7 +16,7 @@ import type {
     class: 'row',
     '[class]': 'direction_class()',
     '[style.--direction]': 'direction()',
-    '[style.--gap]': 'item_gap_parsed()',
+    '[style.--gap]': 'gap()',
     '[style.--flex-style]': `inline() ? 'inline-flex' : null`,
     '[style.--align-items]': 'align_items()',
     '[style.--justify-content]': 'justify_content()',
@@ -25,21 +26,10 @@ import type {
 export class FlexboxRowComponent {
   direction = input<SupportedDirections>()
   inline = input<boolean>()
-
-  gap = input<string | number>(0)
+  gap =  input<string|0|undefined,number>(undefined, {transform: input_to_px})
   align_items = input<SupportedAlignItems | null>(null, {alias: 'align-items'})
   justify_content = input<SupportedJustifyContent | null>(null, {alias: 'justify-content'})
   align_content = input<SupportedAlignContent>('stretch', {alias: 'align-content'})
 
   direction_class = computed(() => `flex-direction-${this.direction()}`);
-
-  item_gap_parsed = computed(() => {
-    const val = this.gap();
-
-    if (typeof val === 'string' && isNaN(Number(val))) {
-      return val;
-    }
-
-    return `${val}px`;
-  });
 }

@@ -1,5 +1,5 @@
-import type {Meta, StoryObj} from '@storybook/angular';
-import {FlexboxRowComponent } from 'component-library';
+import {Meta, moduleMetadata, StoryObj} from '@storybook/angular';
+import {AvatarComponent, AvatarGroupComponent, FlexboxColumnComponent, FlexboxRowComponent} from 'component-library';
 import type {
   SupportedAlignContent,
   SupportedAlignItems,
@@ -9,6 +9,14 @@ import type {
 
 const meta: Meta<FlexboxRowComponent> = {
   component: FlexboxRowComponent,
+  decorators: [
+    moduleMetadata({
+      imports: [
+        FlexboxRowComponent,
+        FlexboxColumnComponent
+      ]
+    })
+  ],
   tags: ['autodocs'],
   argTypes: {
     gap: {
@@ -66,7 +74,7 @@ const column_styles = `column {
   padding: 1rem;
 }`
 
-export const Playground: Story = {
+export const Sample: Story = {
   render: (args) => {
     const direction: SupportedDirections | undefined = args.direction
     const inline: boolean | undefined = args.inline
@@ -80,11 +88,11 @@ export const Playground: Story = {
         host_flexbox_styles,
         row_styles,
         column_styles,
-        `.row { min-height: 400px; min-width: 400px;}`
+        `.row { min-height: 200px; min-width: 400px;}`
       ],
       template: `
         <row
-            gap="${args.gap}"
+            [gap]="${args.gap}"
             [direction]="direction"
             [inline]="inline"
             [align-items]="align_items"

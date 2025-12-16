@@ -10,10 +10,11 @@ export default meta;
 
 type Story = StoryObj<AvatarComponent>;
 
-export const WithNameAndImage: Story = {
+export const Sample: Story = {
   args: {
     name: 'Jane Doe',
-    image_url: `https://mockmind-api.uifaces.co/content/human/${random_number_between(1,100)}.jpg`
+    image_url: `https://mockmind-api.uifaces.co/content/human/${random_number_between(1,100)}.jpg`,
+    bordered: true
   }
 }
 

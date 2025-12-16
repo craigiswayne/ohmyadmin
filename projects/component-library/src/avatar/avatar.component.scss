@@ -1,14 +1,33 @@
 :host {
-  --border-radius: 50%;
-  --avatar-size: 48px;
-  border-radius: var(--border-radius);
-  background-color: var(--background-muted, rgba(227,227,227,0.8));
-  width: var(--avatar-size);
-  height: var(--avatar-size);
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  --avatar-size: 48px;
   vertical-align: middle;
+}
+
+
+/**
+ * TODO: on light mode change border
+ */
+
+/**
+THE ONLY REASON THIS EXISTS.....
+is cause when the avatar component is hovered in the avatar group,
+if you get it just right, it freaks out the transition,
+and the avatar component jumps up and down
+ */
+.inner {
+  align-items: center;
+  border: var(--border-width, 0) solid var(--border-color, #fff);
+  border-radius: 50%;
+  display: inline-flex;
+  height: var(--avatar-size);
+  justify-content: center;
+  user-select: none;
+  width: var(--avatar-size);
+
+  &:not(:has(img)){
+    background-color: var(--background-color, rgb(227,227,227));
+  }
 }
 
 img {
