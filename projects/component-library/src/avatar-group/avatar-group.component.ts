@@ -1,12 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed, ContentChildren,
+  computed,
   contentChildren,
   effect,
   ElementRef,
   input,
-  QueryList
 } from '@angular/core';
 import {AvatarComponent} from '../avatar/avatar.component';
 import {input_to_whole_number} from '../helpers/input_to_whole_number';
@@ -34,8 +33,6 @@ export class AvatarGroupComponent {
 
   avatar_items_as_html = contentChildren(AvatarComponent, {read: ElementRef})
   avatar_items_as_component = contentChildren(AvatarComponent)
-  @ContentChildren(AvatarComponent) contentChildren!: QueryList<AvatarComponent>;
-
 
   extra_count = computed<string | undefined>(() => {
     const limit = this.limit();
