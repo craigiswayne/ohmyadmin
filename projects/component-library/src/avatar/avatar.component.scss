@@ -1,8 +1,8 @@
 @use '../styles/mixins';
 
 :host {
+  @include mixins.generate-size-variables(40px);
   display: inline-flex;
-  @include mixins.generate-size-variables(48px);
   vertical-align: middle;
 }
 

@@ -5,5 +5,9 @@ export const input_to_px = (value: INPUT_TO_PX_ALLOWED_VALUES): string | undefin
     return undefined;
   }
 
+  if(isNaN(Number(value))){
+    return undefined
+  }
+
   return `${value}px`;
 };
