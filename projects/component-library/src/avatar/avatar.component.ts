@@ -17,7 +17,7 @@ export class AvatarComponent {
   size = input<string|0|undefined, INPUT_TO_PX_ALLOWED_VALUES>(undefined, {transform: input_to_px});
   image_url = input<string>();
   name = input<string>();
-  bordered = input<boolean>(false)
+  bordered = input<boolean>()
   protected readonly random_milky_hsl_color = random_milky_hsl_color();
 
   protected initials = computed<string>(() => {
