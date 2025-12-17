@@ -214,7 +214,8 @@ export const IndividualBorderedValues: Story = {
     }
   },
   args: {
-    limit: 5
+    limit: 5,
+    bordered: true
   }
 };
 

@@ -26,47 +26,50 @@ import {input_to_px, type INPUT_TO_PX_ALLOWED_VALUES} from '../helpers/input_to_
 })
 export class AvatarGroupComponent {
 
-  limit = input<number, number | string>(0, {transform: input_to_whole_number})
-  layering = input<'first_on_top' | 'last_on_top'>('last_on_top')
-  overlap = input<string | 0 | undefined, INPUT_TO_PX_ALLOWED_VALUES>(undefined, {transform: input_to_px})
-  bordered = input<boolean>()
+  limit = input<number, number | string>(0, {transform: input_to_whole_number});
+  layering = input<'first_on_top' | 'last_on_top'>('last_on_top');
+  overlap = input<string | 0 | undefined, INPUT_TO_PX_ALLOWED_VALUES>(undefined, {transform: input_to_px});
+  bordered = input<boolean>();
 
-  avatar_items_as_html = contentChildren(AvatarComponent, {read: ElementRef})
-  avatar_items_as_component = contentChildren(AvatarComponent)
+  protected avatar_items_as_html = contentChildren(AvatarComponent, {read: ElementRef});
+  private avatar_items_as_component = contentChildren(AvatarComponent);
 
-  extra_count = computed<string | undefined>(() => {
+  protected surplus_text = computed(() => {
     const limit = this.limit();
-    const surplus = limit === 0 ? 0 : this.avatar_items_as_html().length - limit;
-    return surplus > 0 ? `+ ${surplus}` : undefined
-  })
+    if (limit <= 0) {
+      return undefined;
+    }
+
+    const surplus = this.avatar_items_as_html().length - limit;
+    return surplus > 0 ? `+ ${surplus}` : undefined;
+  });
 
   constructor() {
     effect(() => {
-      const items = this.avatar_items_as_html();
-      const layering = this.layering()
-      const limit = this.limit()
+      const layering = this.layering();
+      const limit = this.limit();
+      const bordered_signal = this.bordered;
+      const html_items = this.avatar_items_as_html();
+      const component_items = this.avatar_items_as_component();
+      const total_items = html_items.length;
 
-      items.forEach(async (item, index) => {
-        if (layering === 'first_on_top') {
-          item.nativeElement.style.zIndex = items.length - index
-        } else {
-          item.nativeElement.style.zIndex = null
+      component_items.forEach((component_item, index) => {
+        if (component_item.bordered() === undefined) {
+          component_item.bordered = bordered_signal;
         }
 
-        if (limit > 0 && index >= limit) {
-          item.nativeElement.classList.add('collapsed')
+        const avatar_html_item_ref = html_items[index];
+        if (!avatar_html_item_ref) {
+          return;
         }
-      })
-    })
 
-    effect(() => {
-      const items = this.avatar_items_as_component();
-      items.forEach( async item => {
-        const item_has_bordered_value = item.bordered() !== undefined;
-        if(!item_has_bordered_value){
-          item.bordered = this.bordered
-        }
-      })
-    })
+        const avatar_html_element = avatar_html_item_ref.nativeElement;
+
+        avatar_html_element.style.zIndex = layering === 'first_on_top' ? `${total_items - index}` : '';
+
+        const is_collapsed = limit > 0 && index >= limit;
+        avatar_html_element.classList.toggle('collapsed', is_collapsed);
+      });
+    });
   }
 }
