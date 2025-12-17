@@ -5,7 +5,7 @@ import type {
   SupportedDirections,
   SupportedJustifyContent
 } from '../flexbox.types';
-import {input_to_px} from '../../helpers/input_to_px';
+import {input_to_px, type INPUT_TO_PX_ALLOWED_VALUES} from '../../helpers/input_to_px';
 
 @Component({
   selector: 'row',
@@ -26,7 +26,7 @@ import {input_to_px} from '../../helpers/input_to_px';
 export class FlexboxRowComponent {
   direction = input<SupportedDirections>()
   inline = input<boolean>()
-  gap =  input<string|0|undefined,number>(undefined, {transform: input_to_px})
+  gap =  input<string|0|undefined,INPUT_TO_PX_ALLOWED_VALUES>(undefined, {transform: input_to_px})
   align_items = input<SupportedAlignItems | null>(null, {alias: 'align-items'})
   justify_content = input<SupportedJustifyContent | null>(null, {alias: 'justify-content'})
   align_content = input<SupportedAlignContent>('stretch', {alias: 'align-content'})

@@ -1,6 +1,6 @@
 :host {
   display: inline-flex;
-  --avatar-size: 48px;
+  --size: 48px;
   vertical-align: middle;
 }
 
@@ -20,10 +20,10 @@ and the avatar component jumps up and down
   border: var(--border-width, 0) solid var(--border-color, #fff);
   border-radius: 50%;
   display: inline-flex;
-  height: var(--avatar-size);
+  height: var(--size);
   justify-content: center;
   user-select: none;
-  width: var(--avatar-size);
+  width: var(--size);
 
   &:not(:has(img)){
     background-color: var(--background-color, rgb(227,227,227));

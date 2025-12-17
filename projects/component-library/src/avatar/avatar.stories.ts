@@ -3,7 +3,10 @@ import {AvatarComponent, random_number_between} from 'component-library';
 
 const meta: Meta<AvatarComponent> = {
   component: AvatarComponent,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  args: {
+    size: 48
+  }
 }
 
 export default meta;
