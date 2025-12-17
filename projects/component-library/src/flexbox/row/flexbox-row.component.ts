@@ -14,7 +14,7 @@ import {input_to_px, type INPUT_TO_PX_ALLOWED_VALUES} from '../../helpers/input_
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'row',
-    '[class]': 'direction_class()',
+    '[class]': 'direction_css_class()',
     '[style.--direction]': 'direction()',
     '[style.--gap]': 'gap()',
     '[style.--flex-style]': `inline() ? 'inline-flex' : null`,
@@ -31,5 +31,5 @@ export class FlexboxRowComponent {
   justify_content = input<SupportedJustifyContent | null>(null, {alias: 'justify-content'})
   align_content = input<SupportedAlignContent>('stretch', {alias: 'align-content'})
 
-  direction_class = computed(() => `flex-direction-${this.direction()}`);
+  direction_css_class = computed(() => `flex-direction-${this.direction()}`);
 }

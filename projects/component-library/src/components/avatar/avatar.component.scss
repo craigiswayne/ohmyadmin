@@ -30,19 +30,23 @@ and the avatar component jumps up and down
   &:not(:has(img)){
     background-color: var(--background-color, rgb(227,227,227));
   }
+}
 
-  .status {
-    --status-size: calc(var(--size, var(--size-medium)) * 0.4);
-    background: #38a06c;
-    border-radius: 50%;
-    width: var(--status-size);
-    position: absolute;
-    height: var(--status-size);
-    bottom: 0;
-    right: 0;
-    border: var(--border-width) solid white;
-    transform: translate(20%, 20%);
-    transform: translate(10%, 10%);
+.status {
+  --status-color: rgb(227,227,227);
+  --status-size: calc(var(--size, var(--size-medium)) * 0.4);
+  background: var(--status-color);
+  border-radius: 50%;
+  width: var(--status-size);
+  position: absolute;
+  height: var(--status-size);
+  bottom: 0;
+  right: 0;
+  border: var(--border-width) solid white;
+  transform: translate(10%, 10%);
+
+  &.online {
+    --status-color: #38a06c;
   }
 }
 

@@ -5,10 +5,6 @@ const meta: Meta<AvatarComponent> = {
   component: AvatarComponent,
   tags: ['autodocs'],
   argTypes: {
-    size: {
-      options: ['extra-small', 'small', 'medium', 'large', 'extra-large', 'extra-extra-large'],
-      control: 'select'
-    },
     status: {
       options: ['online', 'offline'],
       control: 'select'
