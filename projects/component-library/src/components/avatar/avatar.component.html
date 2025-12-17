@@ -4,4 +4,8 @@
   } @else {
     <img [src]="image_url()" alt="User Avatar" loading="lazy" (error)="on_image_error()"/>
   }
+
+  @if(status()){
+    <div class="status"></div>
+  }
 </div>

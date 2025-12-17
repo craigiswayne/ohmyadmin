@@ -1,11 +1,5 @@
 import {Meta, moduleMetadata, StoryObj} from '@storybook/angular';
 import {FlexboxColumnComponent, FlexboxRowComponent} from 'component-library';
-import type {
-  SupportedAlignContent,
-  SupportedAlignItems,
-  SupportedJustifyContent,
-  SupportedDirections
-} from './flexbox.types'
 
 const meta: Meta<FlexboxRowComponent> = {
   component: FlexboxRowComponent,
