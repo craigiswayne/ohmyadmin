@@ -1,0 +1,8 @@
+@mixin generate-size-variables($medium-size) {
+  --size-extra-small: #{$medium-size * 0.6};
+  --size-small: #{$medium-size * 0.8};
+  --size-medium: #{$medium-size};
+  --size-large: #{$medium-size * 1.2};
+  --size-extra-large: #{$medium-size * 1.5};
+  --size-extra-extra-large: #{$medium-size * 2};
+}
