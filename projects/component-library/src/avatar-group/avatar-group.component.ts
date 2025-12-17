@@ -1,12 +1,16 @@
 import {
-  AfterContentInit,
   ChangeDetectionStrategy,
-  Component, computed,
-  contentChildren, ElementRef, input,
+  Component,
+  computed,
+  contentChildren,
+  effect,
+  ElementRef,
+  input,
 } from '@angular/core';
 import {AvatarComponent} from '../avatar/avatar.component';
 import {input_to_whole_number} from '../helpers/input_to_whole_number';
-import {input_to_px} from '../helpers/input_to_px';
+import {input_to_px, type INPUT_TO_PX_ALLOWED_VALUES} from '../helpers/input_to_px';
+import {T_SHIRT_SIZES} from '../types/t-shirt-sizes.type';
 
 @Component({
   selector: 'avatar-group',
@@ -16,50 +20,62 @@ import {input_to_px} from '../helpers/input_to_px';
     AvatarComponent
   ],
   host: {
-    '[style.--item-count]': 'items().length',
+    '[style.--item-count]': 'avatar_items_as_html().length',
     '[style.--overlap]': 'overlap()'
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AvatarGroupComponent implements AfterContentInit {
-  limit = input<number, number|string>(0, {transform: input_to_whole_number})
-  layering = input<'first_on_top'|'last_on_top'>('last_on_top')
-  overlap = input<string|0|undefined, string|number|undefined>(undefined, {transform: input_to_px})
-  items = contentChildren(AvatarComponent, {read: ElementRef})
+export class AvatarGroupComponent {
+  bordered = input<boolean>();
+  layering = input<'first_on_top' | 'last_on_top'>('last_on_top');
+  limit = input<number, number | string>(0, {transform: input_to_whole_number});
+  overlap = input<string | 0 | undefined, INPUT_TO_PX_ALLOWED_VALUES>(undefined, {transform: input_to_px});
+  size = input<T_SHIRT_SIZES>();
 
-  extra_count = computed<string|undefined>(() => {
+  protected avatar_items_as_html = contentChildren(AvatarComponent, {read: ElementRef});
+  private avatar_items_as_component = contentChildren(AvatarComponent);
+
+  protected surplus_text = computed(() => {
     const limit = this.limit();
-    const surplus = limit === 0 ? 0 : this.items().length - limit;
-    return surplus > 0 ? `+ ${surplus}` : undefined
-  })
-
-  ngAfterContentInit(){
-    this.maybe_update_layering()
-    this.maybe_collapse_items()
-  }
-
-  private async maybe_update_layering(){
-    const items = this.items();
-    const layering = this.layering()
-    items.forEach(async (item, index) => {
-      if(layering === 'first_on_top') {
-        item.nativeElement.style.zIndex = items.length - index
-      } else {
-        item.nativeElement.style.zIndex = null
-      }
-    })
-  }
-
-  private async maybe_collapse_items(): Promise<void> {
-    const limit = this.limit()
-    const items = this.items();
-
-    if(limit === 0 || items.length <= limit){
-      return
+    if (limit <= 0) {
+      return undefined;
     }
 
-    items.slice(limit).forEach(async item => {
-      item.nativeElement.classList.add('collapsed')
-    })
+    const surplus = this.avatar_items_as_html().length - limit;
+    return surplus > 0 ? `+ ${surplus}` : undefined;
+  });
+
+  constructor() {
+    effect(() => {
+      const layering = this.layering();
+      const limit = this.limit();
+      const group_bordered = this.bordered;
+      const group_size = this.size;
+      const html_items = this.avatar_items_as_html();
+      const component_items = this.avatar_items_as_component();
+      const total_items = html_items.length;
+
+      component_items.forEach((component_item, index) => {
+        if (component_item.bordered() === undefined) {
+          component_item.bordered = group_bordered;
+        }
+
+        if (component_item.size() === undefined) {
+          component_item.size = group_size;
+        }
+
+        const avatar_html_item_ref = html_items[index];
+        if (!avatar_html_item_ref) {
+          return;
+        }
+
+        const avatar_html_element = avatar_html_item_ref.nativeElement;
+
+        avatar_html_element.style.zIndex = layering === 'first_on_top' ? `${total_items - index}` : '';
+
+        const is_collapsed = limit > 0 && index >= limit;
+        avatar_html_element.classList.toggle('collapsed', is_collapsed);
+      });
+    });
   }
 }

@@ -4,10 +4,10 @@
   vertical-align: middle;
 
   ::ng-deep avatar {
-    margin-left: var(--overlap, -12px);
+    margin-right: var(--overlap, -12px);
 
-    &:first-child {
-      margin-left: 0;
+    &:last-child {
+      margin-right: unset;
     }
 
     &.collapsed {

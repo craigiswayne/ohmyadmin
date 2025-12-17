@@ -1,9 +1,10 @@
+@use '../styles/mixins';
 :host {
+  @include mixins.generate-size-variables(40px);
   display: inline-flex;
-  --avatar-size: 48px;
   vertical-align: middle;
+  font-size: calc(var(--size, 40px) * 0.4);
 }
-
 
 /**
  * TODO: on light mode change border
@@ -20,10 +21,10 @@ and the avatar component jumps up and down
   border: var(--border-width, 0) solid var(--border-color, #fff);
   border-radius: 50%;
   display: inline-flex;
-  height: var(--avatar-size);
+  height: var(--size, var(--size-medium));
   justify-content: center;
   user-select: none;
-  width: var(--avatar-size);
+  width: var(--size, var(--size-medium));
 
   &:not(:has(img)){
     background-color: var(--background-color, rgb(227,227,227));

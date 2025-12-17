@@ -1,5 +1,6 @@
 :host ::ng-deep avatar img {
-    width: auto;
-    height: calc(100% - 2px);
-    border-radius: unset;
+  border-radius: unset;
+  display: inline-flex;
+  height: calc(100% - 2px);
+  width: auto;
 }
