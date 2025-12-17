@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, computed, input, signal} from '@angular/core';
 import {random_milky_hsl_color} from '../helpers/random_milky_hsl_color';
 import {input_to_px, type INPUT_TO_PX_ALLOWED_VALUES} from '../helpers/input_to_px';
-import {is_t_shirt_size, T_SHIRT_SIZES} from 'component-library/types/t-shirt-sizes.type';
+import {is_t_shirt_size, T_SHIRT_SIZES} from '../types/t-shirt-sizes.type';
 
 @Component({
   selector: 'avatar',

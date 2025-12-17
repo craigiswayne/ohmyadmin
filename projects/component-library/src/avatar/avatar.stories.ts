@@ -58,7 +58,7 @@ export const CustomNumberSize: Story = {
        }`
       ],
       template: `
-        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" size="100" [bordered]="${args.bordered}"/>
+        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [size]="100" [bordered]="${args.bordered}"/>
       `
     }
   },

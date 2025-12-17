@@ -1,1 +1,1 @@
-export type INPUT_TO_PX_ALLOWED_VALUES = `${number}` | number | undefined | null;
+export type INPUT_TO_PX_ALLOWED_VALUES = number | undefined | null;

@@ -1,5 +1,5 @@
 import {Meta, moduleMetadata, StoryObj} from '@storybook/angular';
-import {AvatarComponent, AvatarGroupComponent, FlexboxColumnComponent, FlexboxRowComponent} from 'component-library';
+import {FlexboxColumnComponent, FlexboxRowComponent} from 'component-library';
 import type {
   SupportedAlignContent,
   SupportedAlignItems,
@@ -76,12 +76,6 @@ const column_styles = `column {
 
 export const Sample: Story = {
   render: (args) => {
-    const direction: SupportedDirections | undefined = args.direction
-    const inline: boolean | undefined = args.inline
-    const align_items: SupportedAlignItems | null = args.align_items
-    const justify_content: SupportedJustifyContent | null = args.justify_content
-    const align_content: SupportedAlignContent | null = args.align_content
-
     return {
       props: args,
       styles: [
@@ -93,11 +87,11 @@ export const Sample: Story = {
       template: `
         <row
             [gap]="${args.gap}"
-            [direction]="direction"
-            [inline]="inline"
-            [align-items]="align_items"
-            [justify-content]="justify_content"
-            [align-content]="align_content"
+            [direction]="${args.direction}"
+            [inline]="${args.inline}"
+            [align-items]="${args.align_items}"
+            [justify-content]="${args.justify_content}"
+            [align-content]="${args.align_content}"
         >
           <column>1</column>
           <column style="width: var(--example-block-size-large)">2</column>
@@ -126,7 +120,7 @@ export const FlexDirectionRow: Story = {
       column_styles
     ],
     template: `
-      <row gap="10" direction="row">
+      <row [gap]="10" direction="row">
         <column>1</column>
         <column style="width: var(--example-block-size-large)">2</column>
         <column style="width: var(--example-block-size-large)">3</column>
@@ -150,7 +144,7 @@ export const FlexDirectionRowReverse: Story = {
       column_styles
     ],
     template: `
-      <row gap="10" direction="row-reverse">
+      <row [gap]="10" direction="row-reverse">
         <column>1</column>
         <column style="width: var(--example-block-size-large)">2</column>
         <column style="width: var(--example-block-size-large)">3</column>
@@ -175,7 +169,7 @@ export const FlexDirectionColumn: Story = {
       `.row { width: unset; height: 302px; }`
     ],
     template: `
-      <row gap="10" [inline]="true" direction="column">
+      <row [gap]="10" [inline]="true" direction="column">
       <column>1</column>
       <column style="height: var(--example-block-size-large)">2</column>
       <column style="height: var(--example-block-size-large)">3</column>
@@ -200,7 +194,7 @@ export const FlexDirectionColumnReverse: Story = {
       `.row { width: unset; height: 302px; }`
     ],
     template: `
-      <row gap="10" [inline]="true" direction="column-reverse">
+      <row [gap]="10" [inline]="true" direction="column-reverse">
       <column>1</column>
       <column style="height: var(--example-block-size-large)">2</column>
       <column style="height: var(--example-block-size-large)">3</column>
@@ -224,7 +218,7 @@ export const AlignItemsFlexStart: Story = {
       column_styles
     ],
     template: `
-      <row gap="10" align-items="flex-start">
+      <row [gap]="10" align-items="flex-start">
       <column>1</column>
       <column style="width: var(--example-block-size-small); height: var(--example-block-size-large)">2</column>
       <column style="width: var(--example-block-size-small); height: var(--example-block-size-medium)">3</column>
@@ -242,7 +236,7 @@ export const AlignItemsCenter: Story = {
       column_styles
     ],
     template: `
-      <row gap="10" align-items="center">
+      <row [gap]="10" align-items="center">
       <column>1</column>
       <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-large)">2</column>
       <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-medium)">3</column>
@@ -260,7 +254,7 @@ export const AlignItemsFlexEnd: Story = {
       column_styles
     ],
     template: `
-      <row gap="10" align-items="flex-end">
+      <row [gap]="10" align-items="flex-end">
         <column>1</column>
         <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-large)">2</column>
         <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-medium)">3</column>
@@ -278,7 +272,7 @@ export const AlignItemsStretch: Story = {
       column_styles
     ],
     template: `
-      <row gap="10">
+      <row [gap]="10">
         <column>1</column>
         <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-large)">2</column>
         <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-medium)">3</column>
@@ -298,7 +292,7 @@ export const JustifyContentFlexStart: Story = {
       justify_content_styles
     ],
     template: `
-      <row gap="10">
+      <row [gap]="10">
       <column>1</column>
       <column style="width: var(--example-block-size-medium)">2</column>
       <column>3</column>
@@ -317,7 +311,7 @@ export const JustifyContentCenter: Story = {
       justify_content_styles
     ],
     template: `
-     <row gap="10" justify-content="center">
+     <row [gap]="10" justify-content="center">
       <column>1</column>
       <column style="width: var(--example-block-size-medium)">2</column>
       <column>3</column>
@@ -336,7 +330,7 @@ export const JustifyContentFlexEnd: Story = {
       justify_content_styles
     ],
     template: `
-     <row gap="10" justify-content="flex-end">
+     <row [gap]="10" justify-content="flex-end">
       <column>1</column>
       <column style="width: var(--example-block-size-medium)">2</column>
       <column>3</column>
@@ -355,7 +349,7 @@ export const JustifyContentSpaceBetween: Story = {
       justify_content_styles
     ],
     template: `
-      <row gap="10" justify-content="space-between">
+      <row [gap]="10" justify-content="space-between">
         <column>1</column>
         <column style="width: var(--example-block-size-medium)">2</column>
         <column>3</column>
@@ -374,7 +368,7 @@ export const JustifyContentSpaceAround: Story = {
       justify_content_styles
     ],
     template: `
-      <row gap="10" justify-content="space-around">
+      <row [gap]="10" justify-content="space-around">
         <column>1</column>
         <column style="width: var(--example-block-size-medium)">2</column>
         <column>3</column>
@@ -393,7 +387,7 @@ export const JustifyContentSpaceEvenly: Story = {
       justify_content_styles
     ],
     template: `
-      <row gap="10" justify-content="space-evenly">
+      <row [gap]="10" justify-content="space-evenly">
         <column>1</column>
         <column style="width: var(--example-block-size-medium)">2</column>
         <column>3</column>
@@ -413,7 +407,7 @@ export const AlignContentFlexStart: Story = {
       align_content_styles
     ],
     template: `
-      <row gap="10">
+      <row [gap]="10">
       <column style="height: var(--example-block-size-small);">1</column>
       <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</column>
       <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</column>
@@ -435,7 +429,7 @@ export const AlignContentCenter: Story = {
       align_content_styles
     ],
     template: `
-      <row gap="10" align-content="center">
+      <row [gap]="10" align-content="center">
       <column style="height: var(--example-block-size-small);">1</column>
       <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</column>
       <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</column>
@@ -457,7 +451,7 @@ export const AlignContentFlexEnd: Story = {
       align_content_styles
     ],
     template: `
-      <row gap="10" align-content="flex-end">
+      <row [gap]="10" align-content="flex-end">
       <column style="height: var(--example-block-size-small);">1</column>
       <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</column>
       <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</column>
@@ -479,7 +473,7 @@ export const AlignContentStretch: Story = {
       align_content_styles
     ],
     template: `
-      <row gap="10" align-content="stretch">
+      <row [gap]="10" align-content="stretch">
       <column>1</column>
       <column style="width: var(--example-block-size-medium)">2</column>
       <column style="width: var(--example-block-size-medium)">3</column>
@@ -501,7 +495,7 @@ export const AlignContentSpaceBetween: Story = {
       align_content_styles
     ],
     template: `
-      <row gap="10" align-content="space-between">
+      <row [gap]="10" align-content="space-between">
       <column style="height: var(--example-block-size-small);">1</column>
       <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</column>
       <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</column>
@@ -523,7 +517,7 @@ export const AlignContentSpaceAround: Story = {
       align_content_styles
     ],
     template: `
-      <row gap="10" align-content="space-around">
+      <row [gap]="10" align-content="space-around">
       <column style="height: var(--example-block-size-small);">1</column>
       <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</column>
       <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</column>
