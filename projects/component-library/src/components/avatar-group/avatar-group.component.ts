@@ -8,9 +8,9 @@ import {
   input,
 } from '@angular/core';
 import {AvatarComponent} from '../avatar/avatar.component';
-import {input_to_whole_number} from '../helpers/input_to_whole_number';
-import {input_to_px, type INPUT_TO_PX_ALLOWED_VALUES} from '../helpers/input_to_px';
-import {T_SHIRT_SIZES} from '../types/t-shirt-sizes.type';
+import {input_to_whole_number} from '../../helpers/input_to_whole_number';
+import {input_to_px, type INPUT_TO_PX_ALLOWED_VALUES} from '../../helpers/input_to_px';
+import {T_SHIRT_SIZES} from '../../types/t-shirt-sizes.type';
 
 @Component({
   selector: 'avatar-group',

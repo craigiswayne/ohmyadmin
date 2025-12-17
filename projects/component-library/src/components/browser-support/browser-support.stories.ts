@@ -3,7 +3,7 @@ import {
   AvatarComponent,
   AvatarGroupComponent,
 } from 'component-library';
-import {BrowserSupportComponent} from 'component-library/browser-support/browser-support.component';
+import {BrowserSupportComponent} from 'component-library/components/browser-support/browser-support.component';
 
 const meta: Meta<BrowserSupportComponent> = {
   component: BrowserSupportComponent,
