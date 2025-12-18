@@ -27,7 +27,7 @@ const meta: Meta<AvatarGroupComponent> = {
       control: 'number'
     },
     size: {
-      options: ['extra-small', 'small', 'medium', 'large', 'extra-large', 'extra-extra-large'],
+      options: ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl'],
       control: 'select'
     },
   },
@@ -224,7 +224,7 @@ export const IndividualBorderedValues: Story = {
   }
 };
 
-export const GroupSizeExtraSmall: Story = {
+export const GroupSize3XS: Story = {
   parameters: {
 
   },
@@ -255,7 +255,77 @@ export const GroupSizeExtraSmall: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'extra-small'
+    size: '3xs'
+  }
+};
+
+export const GroupSize2XS: Story = {
+  parameters: {
+
+  },
+  render: (args) => {
+    return {
+      template: `
+        <avatar-group
+            limit="${args.limit}"
+            [layering]="'${args.layering}'"
+            [overlap]="${args.overlap}"
+            [bordered]="${args.bordered}"
+            [size]="'${args.size}'"
+        >
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/2.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/3.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/4.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/5.jpg" />
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/6.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/7.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/8.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/9.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/10.jpg" />
+        </avatar-group>
+      `
+    }
+  },
+  args: {
+    limit: 5,
+    bordered: true,
+    size: '2xs'
+  }
+};
+
+export const GroupSizeXS: Story = {
+  parameters: {
+
+  },
+  render: (args) => {
+    return {
+      template: `
+        <avatar-group
+            limit="${args.limit}"
+            [layering]="'${args.layering}'"
+            [overlap]="${args.overlap}"
+            [bordered]="${args.bordered}"
+            [size]="'${args.size}'"
+        >
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/2.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/3.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/4.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/5.jpg" />
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/6.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/7.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/8.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/9.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/10.jpg" />
+        </avatar-group>
+      `
+    }
+  },
+  args: {
+    limit: 5,
+    bordered: true,
+    size: 'xs'
   }
 };
 
@@ -290,7 +360,7 @@ export const GroupSizeSmall: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'small'
+    size: 'sm'
   }
 };
 
@@ -325,7 +395,7 @@ export const GroupSizeMedium: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'medium'
+    size: 'md'
   }
 };
 
@@ -360,11 +430,11 @@ export const GroupSizeLarge: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'large'
+    size: 'lg'
   }
 };
 
-export const GroupSizeExtraLarge: Story = {
+export const GroupSizeXL: Story = {
   parameters: {
 
   },
@@ -395,11 +465,11 @@ export const GroupSizeExtraLarge: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'extra-large'
+    size: 'xl'
   }
 };
 
-export const GroupSizeExtraExtraLarge: Story = {
+export const GroupSize2XL: Story = {
   parameters: {
 
   },
@@ -430,43 +500,181 @@ export const GroupSizeExtraExtraLarge: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'extra-extra-large'
+    size: '2xl'
   }
 };
 
-export const BrowserSupport: Story = {
+export const GroupSize3XL: Story = {
+  parameters: {
+
+  },
   render: (args) => {
     return {
-      styles: [
-        `
-          :host ::ng-deep avatar img {
-            width: auto;
-            height: calc(100% - 2px);
-            border-radius: unset;
-          }
-        `
-      ],
       template: `
-        <avatar-group layering="first_on_top" [overlap]="-5" [size]="'${args.size}'">
-          <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-chrome-icon.svg" />
-          <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/available.svg" />
-        </avatar-group>
-        <avatar-group layering="first_on_top" [overlap]="-5" [size]="'${args.size}'">
-          <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/edge-browser-icon.svg" />
-          <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/available.svg" />
-        </avatar-group>
-        <avatar-group layering="first_on_top" [overlap]="-5" [size]="'${args.size}'">
-          <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/firefox-browser-icon.svg" />
-          <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/unavailable.svg" />
-        </avatar-group>
-        <avatar-group layering="first_on_top" [overlap]="-5" [size]="'${args.size}'">
-          <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/safari-icon.svg" />
-          <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/unavailable.svg" />
+        <avatar-group
+            limit="${args.limit}"
+            [layering]="'${args.layering}'"
+            [overlap]="${args.overlap}"
+            [bordered]="${args.bordered}"
+            [size]="'${args.size}'"
+        >
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/2.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/3.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/4.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/5.jpg" />
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/6.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/7.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/8.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/9.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/10.jpg" />
         </avatar-group>
       `
     }
   },
   args: {
-    size: 'small'
+    limit: 5,
+    bordered: true,
+    size: '3xl'
+  }
+};
+
+export const GroupSize4XL: Story = {
+  parameters: {
+
+  },
+  render: (args) => {
+    return {
+      template: `
+        <avatar-group
+            limit="${args.limit}"
+            [layering]="'${args.layering}'"
+            [overlap]="${args.overlap}"
+            [bordered]="${args.bordered}"
+            [size]="'${args.size}'"
+        >
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/2.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/3.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/4.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/5.jpg" />
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/6.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/7.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/8.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/9.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/10.jpg" />
+        </avatar-group>
+      `
+    }
+  },
+  args: {
+    limit: 5,
+    bordered: true,
+    size: '4xl'
+  }
+};
+
+export const GroupSize5XL: Story = {
+  parameters: {
+
+  },
+  render: (args) => {
+    return {
+      template: `
+        <avatar-group
+            limit="${args.limit}"
+            [layering]="'${args.layering}'"
+            [overlap]="${args.overlap}"
+            [bordered]="${args.bordered}"
+            [size]="'${args.size}'"
+        >
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/2.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/3.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/4.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/5.jpg" />
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/6.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/7.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/8.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/9.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/10.jpg" />
+        </avatar-group>
+      `
+    }
+  },
+  args: {
+    limit: 5,
+    bordered: true,
+    size: '5xl'
+  }
+};
+
+export const GroupSize6XL: Story = {
+  parameters: {
+
+  },
+  render: (args) => {
+    return {
+      template: `
+        <avatar-group
+            limit="${args.limit}"
+            [layering]="'${args.layering}'"
+            [overlap]="${args.overlap}"
+            [bordered]="${args.bordered}"
+            [size]="'${args.size}'"
+        >
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/2.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/3.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/4.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/5.jpg" />
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/6.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/7.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/8.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/9.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/10.jpg" />
+        </avatar-group>
+      `
+    }
+  },
+  args: {
+    limit: 5,
+    bordered: true,
+    size: '6xl'
+  }
+};
+
+export const GroupSize7XL: Story = {
+  parameters: {
+
+  },
+  render: (args) => {
+    return {
+      template: `
+        <avatar-group
+            limit="${args.limit}"
+            [layering]="'${args.layering}'"
+            [overlap]="${args.overlap}"
+            [bordered]="${args.bordered}"
+            [size]="'${args.size}'"
+        >
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/2.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/3.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/4.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/5.jpg" />
+          <avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/6.jpg" />
+          <avatar name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/7.jpg" />
+          <avatar name="Joe Soap" image_url="https://mockmind-api.uifaces.co/content/human/8.jpg" />
+          <avatar name="Jane Doe" image_url="https://mockmind-api.uifaces.co/content/human/9.jpg" />
+          <avatar name="John Wayne" image_url="https://mockmind-api.uifaces.co/content/human/10.jpg" />
+        </avatar-group>
+      `
+    }
+  },
+  args: {
+    limit: 5,
+    bordered: true,
+    size: '7xl'
   }
 };

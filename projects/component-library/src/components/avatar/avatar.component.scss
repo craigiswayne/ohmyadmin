@@ -1,33 +1,25 @@
 @use '../../styles/mixins';
-$medium_size: 80px;
+$medium_size: 64px;
 //$medium_size: 4rem; // 64px
 
 :host {
   @include mixins.generate-size-variables($medium_size);
-  display: inline-flex;
-  vertical-align: middle;
   font-size: calc(var(--size, $medium_size) * 0.4);
-}
-
-.inner {
   align-items: center;
+  background-color: var(--background-color, rgb(227,227,227));
   border: var(--border-width, 0) solid var(--border-color, #fff);
   border-radius: 50%;
   display: inline-flex;
-  height: var(--size, var(--size-medium));
+  height: var(--size, var(--size-md));
   justify-content: center;
   position: relative;
   user-select: none;
-  width: var(--size, var(--size-medium));
-
-  &:not(:has(img)){
-    background-color: var(--background-color, rgb(227,227,227));
-  }
+  width: var(--size, var(--size-md));
 }
 
 .status {
   --status-color: rgb(227,227,227);
-  --status-size: calc(var(--size, var(--size-medium)) * 0.4);
+  --status-size: calc(var(--size, var(--size-md)) * 0.4);
   background: var(--status-color);
   border-radius: 50%;
   width: var(--status-size);

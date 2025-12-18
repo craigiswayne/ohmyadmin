@@ -10,7 +10,7 @@ import {
 import {AvatarComponent} from '../avatar/avatar.component';
 import {input_to_whole_number} from '../../helpers/input_to_whole_number';
 import {input_to_px, type INPUT_TO_PX_ALLOWED_VALUES} from '../../helpers/input_to_px';
-import {T_SHIRT_SIZES} from '../../types/t-shirt-sizes.type';
+import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type';
 
 @Component({
   selector: 'avatar-group',
@@ -30,7 +30,7 @@ export class AvatarGroupComponent {
   layering = input<'first_on_top' | 'last_on_top'>('last_on_top');
   limit = input<number, number | string>(0, {transform: input_to_whole_number});
   overlap = input<string | 0 | undefined, INPUT_TO_PX_ALLOWED_VALUES>(undefined, {transform: input_to_px});
-  size = input<T_SHIRT_SIZES>();
+  size = input<TAILWIND_SIZES>();
 
   protected avatar_items_as_html = contentChildren(AvatarComponent, {read: ElementRef});
   private avatar_items_as_component = contentChildren(AvatarComponent);
