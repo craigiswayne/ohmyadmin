@@ -435,7 +435,7 @@ export const GroupSizeExtraExtraLarge: Story = {
 };
 
 export const BrowserSupport: Story = {
-  render: () => {
+  render: (args) => {
     return {
       styles: [
         `
@@ -447,23 +447,26 @@ export const BrowserSupport: Story = {
         `
       ],
       template: `
-        <avatar-group layering="first_on_top" [overlap]="-5" size="small">
+        <avatar-group layering="first_on_top" [overlap]="-5" [size]="'${args.size}'">
           <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-chrome-icon.svg" />
           <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/available.svg" />
         </avatar-group>
-        <avatar-group layering="first_on_top" [overlap]="-5" size="small">
+        <avatar-group layering="first_on_top" [overlap]="-5" [size]="'${args.size}'">
           <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/edge-browser-icon.svg" />
           <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/available.svg" />
         </avatar-group>
-        <avatar-group layering="first_on_top" [overlap]="-5" size="small">
+        <avatar-group layering="first_on_top" [overlap]="-5" [size]="'${args.size}'">
           <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/firefox-browser-icon.svg" />
           <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/unavailable.svg" />
         </avatar-group>
-        <avatar-group layering="first_on_top" [overlap]="-5" size="small">
+        <avatar-group layering="first_on_top" [overlap]="-5" [size]="'${args.size}'">
           <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/safari-icon.svg" />
           <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/unavailable.svg" />
         </avatar-group>
       `
     }
+  },
+  args: {
+    size: 'small'
   }
 };

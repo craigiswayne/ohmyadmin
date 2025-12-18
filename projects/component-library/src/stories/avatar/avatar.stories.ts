@@ -12,7 +12,7 @@ const meta: Meta<AvatarComponent> = {
     status: {
       options: ['online', 'offline'],
       control: 'select'
-    },
+    }
   }
 }
 
@@ -24,8 +24,7 @@ export const Sample: Story = {
   args: {
     name: 'Jane Doe',
     image_url: 'https://mockmind-api.uifaces.co/content/human/1.jpg',
-    bordered: true,
-    status: 'online'
+    bordered: true
   }
 }
 
@@ -39,18 +38,17 @@ export const AllSizes: Story = {
        }`
       ],
       template: `
-        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="extra-small" [status]="'${args.status}'" />
-        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="small" [status]="'${args.status}'" />
-        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="medium" [status]="'${args.status}'" />
-        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="large" [status]="'${args.status}'" />
-        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="extra-large" [status]="'${args.status}'" />
-        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="extra-extra-large" [status]="'${args.status}'" />
+        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="extra-small" />
+        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="small" />
+        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="medium" />
+        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="large" />
+        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="extra-large" />
+        <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="extra-extra-large" />
       `
     }
   },
   args: {
-    bordered: true,
-    status: 'online'
+    bordered: true
   }
 };
 
@@ -104,3 +102,80 @@ export const NameWithLeadingSpaces: Story = {
     name: '  Craig   Wayne   Govender'
   }
 }
+
+
+type ContainerControls<T> = T & { container_max_height: number; container_max_width: number }
+
+type StoryWithContainerControls = StoryObj<ContainerControls<AvatarComponent>>;
+
+export const ResponsiveAllSizes: StoryWithContainerControls = {
+  render: (args) => {
+    return {
+      styles: [
+        `
+          :host {
+            display: flex;
+          }
+        `,
+        `
+          .container {
+            display: flex;
+            flex-wrap: wrap;
+            background: gray;
+            column-gap: 6px;
+          }
+        `
+      ],
+      template: `
+        <div class="container" style="max-height:${args.container_max_height}px; max-width: ${args.container_max_width}px">
+          <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="extra-small" />
+          <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="small" />
+          <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="medium" />
+          <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="large" />
+          <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="extra-large" />
+          <avatar image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="${args.bordered}" size="extra-extra-large" />
+        </div>
+      `
+    }
+  },
+  args: {
+    bordered: true,
+    container_max_height: 66,
+    container_max_width: 200
+  }
+};
+
+export const ResponsiveJustOne: StoryWithContainerControls = {
+  render: (args) => {
+    return {
+      styles: [
+        `
+          :host {
+            display: flex;
+          }
+        `,
+        `
+          .container {
+            display: flex;
+            flex-wrap: wrap;
+            background: gray;
+            column-gap: 6px;
+          }
+        `
+      ],
+      template: `
+        <div class="container" style="max-height:${args.container_max_height}px; max-width: ${args.container_max_width}px">
+          <avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" [bordered]="${args.bordered}" [size]="'${args.size}'" />
+        </div>
+      `
+    }
+  },
+  args: {
+    bordered: true,
+    container_max_height: 500,
+    container_max_width: 500,
+    image_url: 'https://mockmind-api.uifaces.co/content/human/1.jpg',
+    name: 'Jane Doe',
+    size: 'medium'
+  }
+};

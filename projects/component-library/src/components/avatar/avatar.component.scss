@@ -1,9 +1,12 @@
 @use '../../styles/mixins';
+$medium_size: 80px;
+//$medium_size: 4rem; // 64px
+
 :host {
-  @include mixins.generate-size-variables(40px);
+  @include mixins.generate-size-variables($medium_size);
   display: inline-flex;
   vertical-align: middle;
-  font-size: calc(var(--size, 40px) * 0.4);
+  font-size: calc(var(--size, $medium_size) * 0.4);
 }
 
 .inner {
