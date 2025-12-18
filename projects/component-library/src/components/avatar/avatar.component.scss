@@ -3,13 +3,16 @@ $medium_size: 64px;
 //$medium_size: 4rem; // 64px
 
 :host {
+  --status-size: calc(var(--size, var(--size-md)) * 0.4);
+
   @include mixins.generate-size-variables($medium_size);
-  font-size: calc(var(--size, $medium_size) * 0.4);
+
   align-items: center;
   background-color: var(--background-color, rgb(227,227,227));
   border: var(--border-width, 0) solid var(--border-color, #fff);
   border-radius: 50%;
   display: inline-flex;
+  font-size: calc(var(--size, $medium_size) * 0.4);
   height: var(--size, var(--size-md));
   justify-content: center;
   position: relative;
@@ -18,17 +21,14 @@ $medium_size: 64px;
 }
 
 img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
   border-radius: inherit;
-  z-index: 1;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .status {
-  --status-color: rgb(227,227,227);
-  --status-size: calc(var(--size, var(--size-md)) * 0.4);
-  background: var(--status-color);
+  background: var(--status-color,  rgb(227,227,227));
   border: var(--border-width) solid white;
   border-radius: 50%;
   bottom: 0;
