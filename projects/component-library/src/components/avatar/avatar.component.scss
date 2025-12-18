@@ -17,27 +17,29 @@ $medium_size: 64px;
   width: var(--size, var(--size-md));
 }
 
-.status {
-  --status-color: rgb(227,227,227);
-  --status-size: calc(var(--size, var(--size-md)) * 0.4);
-  background: var(--status-color);
-  border-radius: 50%;
-  width: var(--status-size);
-  position: absolute;
-  height: var(--status-size);
-  bottom: 0;
-  right: 0;
-  border: var(--border-width) solid white;
-  transform: translate(10%, 10%);
-
-  &.online {
-    --status-color: #38a06c;
-  }
-}
-
 img {
   object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: inherit;
+  z-index: 1;
+}
+
+.status {
+  --status-color: rgb(227,227,227);
+  --status-size: calc(var(--size, var(--size-md)) * 0.4);
+  background: var(--status-color);
+  border: var(--border-width) solid white;
+  border-radius: 50%;
+  bottom: 0;
+  height: var(--status-size);
+  position: absolute;
+  right: 0;
+  transform: translate(10%, 10%);
+  width: var(--status-size);
+  z-index: 2;
+
+  &.online {
+    --status-color: #38a06c;
+  }
 }
