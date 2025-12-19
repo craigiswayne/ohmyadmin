@@ -1,9 +1,11 @@
 @use '../../styles/mixins';
+$medium_size: 4em;
 :host {
-  @include mixins.generate-size-variables(40px);
+  @include mixins.generate-size-variables($medium_size);
+  --status-size: calc(var(--size, var(--size-md)) * 0.4);
+
   display: inline-flex;
-  vertical-align: middle;
-  font-size: calc(var(--size, 40px) * 0.4);
+  font-size: calc(var(--size, --size-md) * 0.4);
 }
 
 /**
@@ -18,31 +20,30 @@ and the avatar component jumps up and down
  */
 .inner {
   align-items: center;
+  background-color: var(--background-color, rgb(227,227,227));
   border: var(--border-width, 0) solid var(--border-color, #fff);
   border-radius: 50%;
   display: inline-flex;
-  height: var(--size, var(--size-medium));
+  height: var(--size, var(--size-md));
   justify-content: center;
   position: relative;
   user-select: none;
-  width: var(--size, var(--size-medium));
+  width: var(--size, var(--size-md));
+}
 
-  &:not(:has(img)){
-    background-color: var(--background-color, rgb(227,227,227));
-  }
+.status {
+  background: var(--status-color, rgb(227 227 227));
+  border-radius: 50%;
+  border: var(--border-width, 0) solid var(--border-color, #fff);
+  bottom: 0;
+  height: var(--status-size);
+  position: absolute;
+  right: 0;
+  transform: translate(10%, 10%);
+  width: var(--status-size);
 
-  .status {
-    --status-size: calc(var(--size, var(--size-medium)) * 0.4);
-    background: #38a06c;
-    border-radius: 50%;
-    width: var(--status-size);
-    position: absolute;
-    height: var(--status-size);
-    bottom: 0;
-    right: 0;
-    border: var(--border-width) solid white;
-    transform: translate(20%, 20%);
-    transform: translate(10%, 10%);
+  &.online {
+    --status-color: #38a06c;
   }
 }
 
