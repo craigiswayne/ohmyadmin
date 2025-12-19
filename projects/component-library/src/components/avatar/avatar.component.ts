@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, computed, input, signal} from '@angular/core';
 import {random_milky_hsl_color} from '../../helpers/random_milky_hsl_color';
-import {T_SHIRT_SIZES} from '../../types/t-shirt-sizes.type';
+import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type';
 
 @Component({
   selector: 'avatar',
@@ -17,7 +17,7 @@ export class AvatarComponent {
   bordered = input<boolean>()
   image_url = input<string>();
   name = input<string>();
-  size = input<T_SHIRT_SIZES>()
+  size = input<TAILWIND_SIZES>()
   status = input<'online'|'offline'>()
 
   protected css_size_variable = computed<string|undefined>(() => {

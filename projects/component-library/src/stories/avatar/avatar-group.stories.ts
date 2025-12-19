@@ -27,7 +27,7 @@ const meta: Meta<AvatarGroupComponent> = {
       control: 'number'
     },
     size: {
-      options: ['extra-small', 'small', 'medium', 'large', 'extra-large', 'extra-extra-large'],
+      options: ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl'],
       control: 'select'
     },
   },
@@ -255,7 +255,7 @@ export const GroupSizeExtraSmall: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'extra-small'
+    size: 'xs'
   }
 };
 
@@ -290,7 +290,7 @@ export const GroupSizeSmall: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'small'
+    size: 'sm'
   }
 };
 
@@ -325,7 +325,7 @@ export const GroupSizeMedium: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'medium'
+    size: 'md'
   }
 };
 
@@ -360,7 +360,7 @@ export const GroupSizeLarge: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'large'
+    size: 'lg'
   }
 };
 
@@ -395,7 +395,7 @@ export const GroupSizeExtraLarge: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'extra-large'
+    size: 'xl'
   }
 };
 
@@ -430,7 +430,7 @@ export const GroupSizeExtraExtraLarge: Story = {
   args: {
     limit: 5,
     bordered: true,
-    size: 'extra-extra-large'
+    size: '2xl'
   }
 };
 
@@ -447,19 +447,19 @@ export const BrowserSupport: Story = {
         `
       ],
       template: `
-        <avatar-group layering="first_on_top" [overlap]="-5" size="small">
+        <avatar-group layering="first_on_top" [overlap]="-5" size="sm">
           <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-chrome-icon.svg" />
           <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/available.svg" />
         </avatar-group>
-        <avatar-group layering="first_on_top" [overlap]="-5" size="small">
+        <avatar-group layering="first_on_top" [overlap]="-5" size="sm">
           <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/edge-browser-icon.svg" />
           <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/available.svg" />
         </avatar-group>
-        <avatar-group layering="first_on_top" [overlap]="-5" size="small">
+        <avatar-group layering="first_on_top" [overlap]="-5" size="sm">
           <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/firefox-browser-icon.svg" />
           <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/unavailable.svg" />
         </avatar-group>
-        <avatar-group layering="first_on_top" [overlap]="-5" size="small">
+        <avatar-group layering="first_on_top" [overlap]="-5" size="sm">
           <avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/safari-icon.svg" />
           <avatar image_url="https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/unavailable.svg" />
         </avatar-group>
